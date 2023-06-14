@@ -1,0 +1,40 @@
+.header-hero {
+    display: flex;
+    position: relative;
+    background-color: tint-color($primary, 80%);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    height: 100dvh;
+
+    flex-direction: column;
+    justify-content: center;
+
+    &::before {
+        @include psuedo-full;
+        @include gradient-y($dark, transparent);
+    }
+
+    &-content {
+        position: relative;
+        z-index: 2;
+
+        img {
+            border-top-left-radius: 150px;
+            border-bottom-right-radius: 150px;
+        }
+
+        span {
+            display: inline-block;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+    }
+}

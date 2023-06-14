@@ -1,0 +1,28 @@
+.block {
+    display: flex;
+    align-items: center;
+
+    &-image,
+    &-text {
+        flex: 1;
+    }
+
+    &-text {
+        padding: 3rem;
+    }
+
+    &-standaard {
+        position: relative;
+
+        &::after {
+            background-color: tint-color($primary, 75%);
+            position: absolute;
+            content: " ";
+            height: 400px;
+            width: 400px;
+            top: -40px;
+            right: -40px;
+            z-index: -1;
+        }
+    }
+}

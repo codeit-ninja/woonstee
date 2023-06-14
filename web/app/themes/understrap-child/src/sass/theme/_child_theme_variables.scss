@@ -1,0 +1,59 @@
+$prefix: 'codeit-';
+
+$primary: #C29582;
+$dark: #1d2327;
+
+$grays: (
+    "100": #e8e8e8,
+    "200": #d1d1d1,
+    "300": #bababa,
+    "400": #a3a3a3,
+    "500": #8d8d8d,
+    "600": #767676,
+    "700": #5f5f5f,
+    "800": #484848,
+    "900": #313131,
+);
+
+$gray-100: map-get($grays, '100');
+$gray-200: map-get($grays, '200');
+$gray-300: map-get($grays, '300');
+$gray-400: map-get($grays, '400');
+$gray-500: map-get($grays, '500');
+$gray-600: map-get($grays, '600');
+$gray-700: map-get($grays, '700');
+$gray-800: map-get($grays, '800');
+$gray-900: map-get($grays, '900');
+
+$font-path: '../fonts';
+$font-size-base: 1.2rem;
+$font-weight-base: 300;
+$font-family-base: 'DIN';
+
+$enable-shadows: true;
+$border-radius: 0;
+
+$navbar-padding-y: 0;
+$navbar-brand-font-size: 2rem;
+
+$nav-link-padding-y: 1.5rem;
+$nav-link-padding-x: 0rem;
+
+$navbar-nav-link-padding-x: $nav-link-padding-x;
+
+$headings-font-family: 'Filosofia';
+$headings-font-style: normal;
+$headings-font-weight: 250;
+
+$input-btn-padding-y: 1rem;
+$input-btn-padding-x: 1.5rem;
+
+$btn-padding-y: $input-btn-padding-y;
+$btn-padding-x: $input-btn-padding-x;
+// $btn-font-family:                   $input-btn-font-family;
+// $btn-font-size:                     $input-btn-font-size;
+// $btn-line-height:                   $input-btn-line-height;
+
+$btn-font-weight: 300;
+$btn-box-shadow: none;
+$btn-border-width: 2px;

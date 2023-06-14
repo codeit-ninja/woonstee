@@ -1,0 +1,15 @@
+.navbar {
+    .nav {
+        &-item {
+            position: relative;
+            overflow: hidden;
+
+            @include line-slide-in-animation( -100%, 0% );
+            @include line-hover('link', 100%, 39%);
+        }
+
+        &-link {
+            font-weight: 500;
+        }
+    }
+}

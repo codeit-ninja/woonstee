@@ -1,0 +1,29 @@
+.navbar {
+    background-color: $white;
+
+    &-brand {
+        font-family: $headings-font-family;
+        text-transform: uppercase;
+        font-weight: 300;
+
+        img {
+            max-width: 340px;
+        }
+    }
+
+    --#{$prefix}navbar-brand-margin-end: 5rem;
+
+    &-nav {
+        text-transform: uppercase;
+        justify-content: space-between;
+        flex-grow: 1;
+    }
+}
+
+.admin-bar {
+    #main-nav {
+        &.fixed-top {
+            top: 32px;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.btn {
+    font-weight: 500;
+
+    @include line-hover( 'btn', calc( 100% - $btn-padding-x * 2 ), 37% );
+
+    &-primary {
+        background-color: $white;
+        position: relative;
+        border: 0;
+        color: $dark;
+        text-transform: uppercase;
+    }
+
+    &-outline {
+        &-dark {
+            position: relative;
+            --b: #{$btn-border-width};   /* border thickness */
+            --s: .2em; /* size of the corner */
+            --c: #{$dark};
+            --_p: var(--s);
+
+            color: var(--s);
+            background:
+                conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--c) 0)
+                var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+            transition: .12s linear, color 0s, background-color 0s;
+            outline: var(--b) solid #0000;
+            outline-offset: .2em;
+            border: none;
+
+            [class^="fa-"] {
+                position: relative;
+                transition: right .12s ease-in-out;
+                right: 0;
+            }
+
+            &:hover {
+                background-color: transparent;
+                color: $dark;
+                //--_p: 0px;
+
+                .fa-arrow-right-long {
+                    right: calc(var(--s) * -1);
+                }
+            }
+        }
+    }
+
+    @keyframes border-radius-in {
+        from { 
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        to { 
+            border-top-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+    }
+
+    @keyframes border-radius-out {
+        to { 
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@mixin pseudo {
+    position: absolute;
+    content: " ";
+}
+
+@mixin psuedo-full {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+@mixin line-hover($type: 'link', $width: 100%, $bottom: 40%) {
+    overflow: hidden;
+    
+    @if $type == 'btn' {
+        @keyframes #{$type}-line-slide-in {
+            from { left: -100% }
+            to { left: $btn-padding-x }
+        }
+    } @else {
+        @keyframes #{$type}-line-slide-in {
+            from { left: -100% }
+            to { left: 0% }
+        }
+    }
+
+    &::after {
+        @include pseudo;
+        
+        background-color: $body-color;
+        bottom: $bottom;
+        height: 1px;
+        width: $width;
+    }
+
+    &:not(.active) {
+        &::after {
+            left: -100%;
+        }
+
+        &:hover {
+            &::after {
+                animation: #{$type}-line-slide-in .15s forwards;
+            }
+        }
+    }
+}

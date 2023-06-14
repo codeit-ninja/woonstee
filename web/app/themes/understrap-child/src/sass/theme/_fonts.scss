@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Filosofia';
+    src: url(#{$font-path}/filosofia/Filosofia.ttf);
+    font-style: normal;
+    font-weight: 400;
+    // descent-override: 0%;
+}
+
+@font-face {
+    font-family: 'IvyMode';
+    src: url(#{$font-path}/ivy/IvyMode-Variable.woff2);
+    font-style: normal;
+    font-variation-settings: "ital" 0, "wght" 200;
+    font-weight: 100 900;
+    descent-override: 0%;
+}
+
+@font-face {
+    font-family: 'Cormorant';
+    src: url(#{$font-path}/cormorant/Cormorant-VariableFont_wght.ttf);
+    font-weight: 100 900;
+    descent-override: 0%;
+}
+
+@font-face {
+    font-family: 'Cormorant';
+    src: url(#{$font-path}/cormorant/Cormorant-Italic-VariableFont_wght.ttf);
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'DIN';
+    src: url(#{$font-path}/din/FF-DIN-Variable.woff);
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: 'DIN';
+    src: url(#{$font-path}/din/FF-DIN-Italic-Variable.woff);
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url(#{$font-path}/overpass/Overpass-VariableFont_wght.ttf);
+    font-weight: 100 900;
+    descent-override: 0%;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url(#{$font-path}/overpass/Overpass-Italic-VariableFont_wght.ttf);
+    font-weight: 100 900;
+    font-style: italic;
+    descent-override: 0%;
+}

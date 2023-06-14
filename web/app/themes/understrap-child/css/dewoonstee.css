@@ -1,0 +1,267 @@
+@font-face {
+  font-family: "Filosofia";
+  src: url(../fonts/filosofia/Filosofia.ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "IvyMode";
+  src: url(../fonts/ivy/IvyMode-Variable.woff2);
+  font-style: normal;
+  font-variation-settings: "ital" 0, "wght" 200;
+  font-weight: 100 900;
+  descent-override: 0%;
+}
+@font-face {
+  font-family: "Cormorant";
+  src: url(../fonts/cormorant/Cormorant-VariableFont_wght.ttf);
+  font-weight: 100 900;
+  descent-override: 0%;
+}
+@font-face {
+  font-family: "Cormorant";
+  src: url(../fonts/cormorant/Cormorant-Italic-VariableFont_wght.ttf);
+  font-weight: 100 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "DIN";
+  src: url(../fonts/din/FF-DIN-Variable.woff);
+  font-weight: 100 900;
+}
+@font-face {
+  font-family: "DIN";
+  src: url(../fonts/din/FF-DIN-Italic-Variable.woff);
+  font-weight: 100 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Overpass";
+  src: url(../fonts/overpass/Overpass-VariableFont_wght.ttf);
+  font-weight: 100 900;
+  descent-override: 0%;
+}
+@font-face {
+  font-family: "Overpass";
+  src: url(../fonts/overpass/Overpass-Italic-VariableFont_wght.ttf);
+  font-weight: 100 900;
+  font-style: italic;
+  descent-override: 0%;
+}
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  margin-bottom: clamp(0.5rem, 1vw, 1.3rem);
+}
+
+blockquote {
+  font-family: "Filosofia";
+  margin: 4rem auto 6rem;
+  font-weight: 200;
+}
+
+.header-hero {
+  display: flex;
+  position: relative;
+  background-color: #f3eae6;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  height: 100dvh;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-hero::before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, #1d2327, transparent);
+}
+.header-hero-content {
+  position: relative;
+  z-index: 2;
+}
+.header-hero-content img {
+  border-top-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+}
+.header-hero-content span {
+  display: inline-block;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.header-hero-content h2 {
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.navbar {
+  background-color: #fff;
+  --codeit-navbar-brand-margin-end: 5rem;
+}
+.navbar-brand {
+  font-family: "Filosofia";
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.navbar-brand img {
+  max-width: 340px;
+}
+.navbar-nav {
+  text-transform: uppercase;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.admin-bar #main-nav.fixed-top {
+  top: 32px;
+}
+
+.navbar .nav-item {
+  position: relative;
+  overflow: hidden;
+  overflow: hidden;
+}
+@keyframes line-slide-in {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes link-line-slide-in {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+.navbar .nav-item::after {
+  position: absolute;
+  content: " ";
+  background-color: #313131;
+  bottom: 39%;
+  height: 1px;
+  width: 100%;
+}
+.navbar .nav-item:not(.active)::after {
+  left: -100%;
+}
+.navbar .nav-item:not(.active):hover::after {
+  animation: link-line-slide-in 0.15s forwards;
+}
+.navbar .nav-link {
+  font-weight: 500;
+}
+
+.btn {
+  font-weight: 500;
+  overflow: hidden;
+}
+@keyframes btn-line-slide-in {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 1.5rem;
+  }
+}
+.btn::after {
+  position: absolute;
+  content: " ";
+  background-color: #313131;
+  bottom: 37%;
+  height: 1px;
+  width: calc(100% - 3rem);
+}
+.btn:not(.active)::after {
+  left: -100%;
+}
+.btn:not(.active):hover::after {
+  animation: btn-line-slide-in 0.15s forwards;
+}
+.btn-primary {
+  background-color: #fff;
+  position: relative;
+  border: 0;
+  color: #1d2327;
+  text-transform: uppercase;
+}
+.btn-outline-dark {
+  position: relative;
+  --b: 2px; /* border thickness */
+  --s: .2em; /* size of the corner */
+  --c: #1d2327;
+  --_p: var(--s);
+  color: var(--s);
+  background: conic-gradient(from 90deg at var(--b) var(--b), rgba(0, 0, 0, 0) 90deg, var(--c) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2 * var(--_p)) calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.12s linear, color 0s, background-color 0s;
+  outline: var(--b) solid rgba(0, 0, 0, 0);
+  outline-offset: 0.2em;
+  border: none;
+}
+.btn-outline-dark [class^=fa-] {
+  position: relative;
+  transition: right 0.12s ease-in-out;
+  right: 0;
+}
+.btn-outline-dark:hover {
+  background-color: transparent;
+  color: #1d2327;
+}
+.btn-outline-dark:hover .fa-arrow-right-long {
+  right: calc(var(--s) * -1);
+}
+@keyframes border-radius-in {
+  from {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  to {
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+}
+@keyframes border-radius-out {
+  to {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.block {
+  display: flex;
+  align-items: center;
+}
+.block-image, .block-text {
+  flex: 1;
+}
+.block-text {
+  padding: 3rem;
+}
+.block-standaard {
+  position: relative;
+}
+.block-standaard::after {
+  background-color: #f0e5e0;
+  position: absolute;
+  content: " ";
+  height: 400px;
+  width: 400px;
+  top: -40px;
+  right: -40px;
+  z-index: -1;
+}
+
+/*# sourceMappingURL=dewoonstee.css.map */
