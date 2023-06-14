@@ -1,6 +1,7 @@
 .block {
     display: flex;
     align-items: center;
+    margin-bottom: 5rem;
 
     &-image,
     &-text {
@@ -15,14 +16,27 @@
         position: relative;
 
         &::after {
-            background-color: tint-color($primary, 75%);
             position: absolute;
             content: " ";
             height: 400px;
             width: 400px;
-            top: -40px;
-            right: -40px;
             z-index: -1;
+        }
+
+        &.block-even {
+            &::after {
+                background-color: tint-color($primary, 75%);
+                top: -40px;
+                right: -40px;
+            }
+        }
+
+        &.block-odd {
+            &::after {
+                background-color: tint-color($blue, 80%);
+                bottom: 50%;
+                left: 30%;
+            }
         }
     }
 }

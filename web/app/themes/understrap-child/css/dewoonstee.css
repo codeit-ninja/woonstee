@@ -243,6 +243,7 @@ blockquote {
 .block {
   display: flex;
   align-items: center;
+  margin-bottom: 5rem;
 }
 .block-image, .block-text {
   flex: 1;
@@ -254,14 +255,21 @@ blockquote {
   position: relative;
 }
 .block-standaard::after {
-  background-color: #f0e5e0;
   position: absolute;
   content: " ";
   height: 400px;
   width: 400px;
+  z-index: -1;
+}
+.block-standaard.block-even::after {
+  background-color: #f0e5e0;
   top: -40px;
   right: -40px;
-  z-index: -1;
+}
+.block-standaard.block-odd::after {
+  background-color: #cfe2ff;
+  bottom: 50%;
+  left: 30%;
 }
 
 /*# sourceMappingURL=dewoonstee.css.map */
