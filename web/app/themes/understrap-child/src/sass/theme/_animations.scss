@@ -1,13 +1,33 @@
-@mixin line-slide-in-animation( $from: -100%, $to: 0% ) {
-    @keyframes line-slide-in {
-        from { left: $from }
-        to { left: $to }
+.preload * {
+    animation-duration: 0s !important;
+    transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+    
+    &::before {
+        animation-duration: 0s !important;
+        transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
     }
 }
 
-@mixin slide-in-left( $id: 'codeit', $from: -100%, $to: 0% ) {
+@mixin line-slide-in-animation($from: -100%, $to: 0%) {
+    @keyframes line-slide-in {
+        from {
+            left: $from
+        }
+
+        to {
+            left: $to
+        }
+    }
+}
+
+@mixin slide-in-left($id: 'codeit', $from: -100%, $to: 0%) {
     @keyframes #{$id}-slide-in-left {
-        from { left: $from }
-        to { left: $to }
+        from {
+            left: $from
+        }
+
+        to {
+            left: $to
+        }
     }
 }

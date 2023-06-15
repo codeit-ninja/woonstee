@@ -3,13 +3,9 @@
     align-items: center;
     margin-bottom: 5rem;
 
-    &-image,
-    &-text {
+    &-col,
+    &-col {
         flex: 1;
-    }
-
-    &-text {
-        padding: 3rem;
     }
 
     &-standaard {
@@ -20,7 +16,7 @@
             content: " ";
             height: 400px;
             width: 400px;
-            z-index: -1;
+            z-index: -2;
         }
 
         &.block-even {
@@ -33,10 +29,15 @@
 
         &.block-odd {
             &::after {
-                background-color: tint-color($blue, 80%);
+                background-color: tint-color(#73AB84, 75%);
                 bottom: 50%;
                 left: 30%;
             }
         }
+    }
+
+    &-text {
+        background-color: tint-color($gray-200, 35%);
+        padding: 2rem;
     }
 }

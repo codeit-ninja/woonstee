@@ -1,4 +1,115 @@
 @font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProExThin.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: italic;
+    font-weight: 100;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProExThinItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProThin.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: italic;
+    font-weight: 200;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProThinItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProExLight.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProExLightItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProLight.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProLightItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProMedium.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProMediumItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro Bold';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Sweet Sans Pro Bold'), url('#{$font-path}/sweet-sans-pro/SweetSansProBold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: italic;
+    font-weight: 600;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProBoldItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Sweet Sans'), url('#{$font-path}/sweet-sans-pro/SweetSansProHeavy.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    font-style: ita;
+    font-weight: 700;
+    src: local('Sweet Sans Pro'), url('#{$font-path}/sweet-sans-pro/SweetSansProHeavyItalic.woff') format('woff');
+}
+
+@font-face {
     font-family: 'Filosofia';
     src: url(#{$font-path}/filosofia/Filosofia.ttf);
     font-style: normal;

@@ -14,7 +14,7 @@ $image_attributes = wp_get_attachment_image_src( $image_ID, 'full' );
                 <h2>
                     Verrassend, Inspirerend & Veelzijdig
                 </h2>
-                <a href="#" role="button" class="btn btn-primary">Vrijblijvend advies aanvragen</a>
+                <a href="#" role="button" class="btn btn-outline-white">Vrijblijvend advies aanvragen</a>
             </div>
         </div>
     </div>

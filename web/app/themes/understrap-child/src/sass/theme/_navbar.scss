@@ -1,5 +1,11 @@
 .navbar {
     background-color: $white;
+    border-bottom: 1px solid $dark;
+
+    --#{$prefix}navbar-color: #{$dark};
+    --#{$prefix}navbar-hover-color: #{$dark};
+    --#{$prefix}navbar-brand-color: #{$dark};
+    --#{$prefix}navbar-brand-hover-color: #{$dark};
 
     &-brand {
         font-family: $headings-font-family;
@@ -14,7 +20,6 @@
     --#{$prefix}navbar-brand-margin-end: 5rem;
 
     &-nav {
-        text-transform: uppercase;
         justify-content: space-between;
         flex-grow: 1;
     }

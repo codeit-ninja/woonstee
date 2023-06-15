@@ -24,7 +24,7 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'offcanvas' );
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
+<body <?php body_class(['preload']); ?> <?php understrap_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 

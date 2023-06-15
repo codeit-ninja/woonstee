@@ -1,18 +1,18 @@
 $prefix: 'codeit-';
 
 $primary: #C29582;
-$dark: #1d2327;
+$dark: #17191a;
 
 $grays: (
     "100": #e8e8e8,
     "200": #d1d1d1,
-    "300": #bababa,
-    "400": #a3a3a3,
-    "500": #8d8d8d,
-    "600": #767676,
-    "700": #5f5f5f,
-    "800": #484848,
-    "900": #313131,
+    "300": #b9baba,
+    "400": #a2a3a3,
+    "500": #8b8c8d,
+    "600": #747576,
+    "700": #5d5e5f,
+    "800": #454748,
+    "900": #2e3031,
 );
 
 $gray-100: map-get($grays, '100');
@@ -27,8 +27,8 @@ $gray-900: map-get($grays, '900');
 
 $font-path: '../fonts';
 $font-size-base: 1.2rem;
-$font-weight-base: 300;
-$font-family-base: 'DIN';
+$font-weight-base: 400;
+$font-family-base: 'Sweet Sans Pro';
 
 $enable-shadows: true;
 $border-radius: 0;
@@ -41,7 +41,7 @@ $nav-link-padding-x: 0rem;
 
 $navbar-nav-link-padding-x: $nav-link-padding-x;
 
-$headings-font-family: 'Filosofia';
+$headings-font-family: 'IvyMode';
 $headings-font-style: normal;
 $headings-font-weight: 250;
 

@@ -107,3 +107,20 @@ function disable_gutenberg_editor_check( bool $use_block_editor, WP_Post $post )
     return $use_block_editor;
 }
 add_filter( 'use_block_editor_for_post', 'disable_gutenberg_editor_check', 10, 2 );
+
+/**
+ * Template block parser to use in `array_walk` 
+ * when looping over the blocks
+ * 
+ *  @param array    $block
+ *  @param int      $index
+ */
+function codeit_render_block( $block, $index ) {
+    if( $block['acf_fc_layout'] === 'block_image_tekst' ) {
+        return get_template_part('templates/blocks/image', 'text', array( 'index' => $index, 'block' => $block ));
+    }
+
+    if( $block['acf_fc_layout'] === 'block_text' ) {
+        return get_template_part('templates/blocks/text', null, array( 'index' => $index, 'block' => $block ));
+    }
+}

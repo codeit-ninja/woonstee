@@ -6743,6 +6743,13 @@
 	  }
 	})();
 
+	// Add your custom JS here.
+	document.addEventListener('DOMContentLoaded', () => {
+	  setTimeout(() => {
+	    document.body.classList.remove('preload');
+	  }, 500);
+	});
+
 	exports.Alert = alert;
 	exports.Button = button;
 	exports.Carousel = carousel;
