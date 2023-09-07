@@ -1,6 +1,11 @@
 <?php
 /**
- * Home page blocks logic implementation
+ * nlock editor
+ * 
+ * Render blocks
+ * 
+ * @since 1.0.0
+ * @package Woonstee
  */
 $blocks = get_field('blocks');
 

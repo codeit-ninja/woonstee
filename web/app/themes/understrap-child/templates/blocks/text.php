@@ -4,10 +4,14 @@
  */
 $index = $args['index'];
 $block = $args['block'];
+
+$style = $block['background_color'] ? 'style="background-color: '. $block['background_color'] .';"' : '';
 ?>
 
-<div class="block block-text">
-    <div class="block-text">
-        <?= $block['text']; ?>
+<div class="container">
+    <div class="block block-text" <?php echo $style; ?>>
+        <div class="block-text-content">
+            <?= $block['text']; ?>
+        </div>
     </div>
 </div>

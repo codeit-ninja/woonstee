@@ -91,6 +91,9 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/web/app/themes/dewoonstee/vendor/composer" />
       <path value="$PROJECT_DIR$/web/app/themes/dewoonstee/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/vendor/deployer/deployer" />
+      <path value="$PROJECT_DIR$/web/app/plugins/advanced-custom-fields-pro/vendor/polyfill-unserialize/src" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

@@ -1,4 +1,5 @@
 .btn {
+    z-index: 1;
     position: relative;
     --b: #{$btn-border-width};   /* border thickness */
     --s: .2em; /* size of the corner */
@@ -29,6 +30,27 @@
         top: calc(var(--s) + 1px);
         left: calc(var(--s) + 1px);
         z-index: -1;
+    }
+
+    &-primary {
+        --c: #{$primary};
+        color: $white;
+        background-color: transparent;
+        transition: all .2s ease-in-out;
+
+        &::before {
+            @include pseudo;
+            @include gradient-x($primary, $primary);
+        }
+
+        &::after {
+            background-color: $white;
+        }
+
+        &:hover {
+            color: $white;
+            background-color: transparent;
+        }
     }
 
     &-secondary {
@@ -69,6 +91,30 @@
 
         &:hover {
             color: $white;
+            background-color: transparent;
+        }
+    }
+
+    &-white {
+        --c: #{$white};
+        --codeit-btn-bg: transparent;
+        --codeit-btn-active-bg: transparent;
+        --codeit-btn-disabled-bg: transparent;
+        --codeit-btn-active-shadow: none;
+        --codeit-btn-active-border-color: transparent;
+
+        color: $dark;
+
+        &::before {
+            @include pseudo;
+            @include gradient-x($white, $white);
+        }
+
+        &::after {
+            background-color: $dark;
+        }
+
+        &:hover {
             background-color: transparent;
         }
     }

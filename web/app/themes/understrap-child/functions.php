@@ -100,7 +100,7 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
  * Disable the gutenberg editor if defined
  */
 function disable_gutenberg_editor_check( bool $use_block_editor, WP_Post $post ) {
-    if( get_field('disable_gutenberg_editor', $post->ID) ) {
+    if( get_field('disable_gutenberg_editor', $post->ID) || $post->post_type === 'project' ) {
         return false;
     }
     
@@ -116,11 +116,19 @@ add_filter( 'use_block_editor_for_post', 'disable_gutenberg_editor_check', 10, 2
  *  @param int      $index
  */
 function codeit_render_block( $block, $index ) {
-    if( $block['acf_fc_layout'] === 'block_image_tekst' ) {
+    if( $block['acf_fc_layout'] === 'block_hero_image' ) {
+        return get_template_part('templates/blocks/hero', 'image', array( 'index' => $index, 'block' => $block ));
+    }
+
+    if( $block['acf_fc_layout'] === 'block_image_with_text' ) {
         return get_template_part('templates/blocks/image', 'text', array( 'index' => $index, 'block' => $block ));
     }
 
     if( $block['acf_fc_layout'] === 'block_text' ) {
         return get_template_part('templates/blocks/text', null, array( 'index' => $index, 'block' => $block ));
+    }
+
+    if( $block['acf_fc_layout'] === 'block_slider' ) {
+        return get_template_part('templates/blocks/slider', null, array( 'index' => $index, 'block' => $block ));
     }
 }

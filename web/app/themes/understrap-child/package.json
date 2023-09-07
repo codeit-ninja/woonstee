@@ -73,5 +73,9 @@
         "sass": "^1.56.0",
         "terser": "^5.15.1",
         "understrap": "github:understrap/understrap#develop"
+    },
+    "dependencies": {
+        "@glidejs/glide": "^3.6.0",
+        "tiny-slider": "^2.9.4"
     }
 }

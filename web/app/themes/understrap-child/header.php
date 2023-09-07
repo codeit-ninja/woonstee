@@ -35,6 +35,5 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'offcanvas' );
 		</a>
 
 		<?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?>
-        <?php get_template_part( 'global-templates/header/image' ); ?>
 
 	</header>

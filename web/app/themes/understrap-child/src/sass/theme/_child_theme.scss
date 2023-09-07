@@ -1,3 +1,6 @@
+@import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
 @import "../assets/bootstrap5/functions";
 
 // Variable overrides
@@ -17,7 +20,15 @@
 @import "fonts";
 @import "typography";
 @import "header";
+@import "forms";
 @import "navbar";
 @import "nav";
 @import "btn";
+@import "slider";
 @import "blocks";
+@import "styles";
+@import "footer";
+
+@import "blocks/hero-image";
+@import "blocks/image-text";
+@import "blocks/text";

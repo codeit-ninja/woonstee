@@ -2,10 +2,11 @@ body {
 	overflow-x: hidden; // Fix for Windows Chrome horizontal scrollbar.
 }
 
-
-// Some basic padding for all wrappers
-.wrapper {
-	padding: $grid-gutter-width 0;
+.admin-bar {
+    .wrapper {
+        position: relative;
+        top: -32px;
+    }
 }
 
 // Reset hero wrapper padding to 0

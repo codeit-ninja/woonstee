@@ -13,7 +13,7 @@
     z-index: 1;
 }
 
-@mixin line-hover($type: 'link', $width: 100%, $bottom: 40%) {
+@mixin line-hover($type: 'link', $width: 100%, $bottom: 40%, $color: $body-color) {
     overflow: hidden;
     
     @if $type == 'btn' {
@@ -31,7 +31,7 @@
     &::after {
         @include pseudo;
         
-        background-color: $body-color;
+        background-color: $color;
         bottom: $bottom;
         height: 1px;
         width: $width;

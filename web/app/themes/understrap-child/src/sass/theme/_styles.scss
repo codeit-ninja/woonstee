@@ -1,0 +1,16 @@
+#block-green {
+    position: relative;
+    margin-top: 10rem;
+
+    &::after {
+        background-color: tint-color($blue, 85%);
+        position: absolute;
+        display: block;
+        content: " ";
+        height: 60%;
+        width: 100%;
+        top: -10%;
+        left: 5%;
+        z-index: -1;
+    }
+}

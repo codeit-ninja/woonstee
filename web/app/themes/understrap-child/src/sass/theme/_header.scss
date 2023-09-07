@@ -13,7 +13,7 @@
 
     &::before {
         @include psuedo-full;
-        @include gradient-radial(transparent, $dark);
+        @include gradient-radial(transparent, rgba($dark, .7));
     }
 
     &-content {

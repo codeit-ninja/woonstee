@@ -1,0 +1,25 @@
+#wrapper-footer-full {
+    background-color: tint-color($dark, 5%);
+
+    .footer-widget {
+        color: tint-color($dark, 35%);
+
+        a,
+        p {
+            color: tint-color($dark, 85%);
+        }
+
+        .fa-brands {
+            font-size: 1.4rem;
+        }
+    }
+
+    .form-control {
+        border-bottom-color: tint-color($dark, 85%);
+        color: tint-color($dark, 85%);
+    }
+}
+
+#wrapper-footer {
+    background-color: $dark;
+}

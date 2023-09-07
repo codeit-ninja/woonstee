@@ -1,0 +1,19 @@
+.wpcf7 {
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.form-control {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $dark;
+    padding: .85rem 1.5rem;
+
+    &:focus {
+        background-color: inherit;
+        border-bottom: 1px solid $dark;
+        box-shadow: none;
+        outline: none;
+    }
+}

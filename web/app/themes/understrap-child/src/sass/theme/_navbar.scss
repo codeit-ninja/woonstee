@@ -1,11 +1,11 @@
 .navbar {
-    background-color: $white;
+    background-color: $dark;
     border-bottom: 1px solid $dark;
 
-    --#{$prefix}navbar-color: #{$dark};
-    --#{$prefix}navbar-hover-color: #{$dark};
-    --#{$prefix}navbar-brand-color: #{$dark};
-    --#{$prefix}navbar-brand-hover-color: #{$dark};
+    --#{$prefix}navbar-color: #{$white};
+    --#{$prefix}navbar-hover-color: #{$white};
+    --#{$prefix}navbar-brand-color: #{$white};
+    --#{$prefix}navbar-brand-hover-color: #{$white};
 
     &-brand {
         font-family: $headings-font-family;
