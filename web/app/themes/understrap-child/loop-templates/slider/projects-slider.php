@@ -10,7 +10,9 @@ $wp_post = new WP_Query( array('post_type' => 'project') );
     <div class="slider project-slider">
         <?php while ( $wp_post->have_posts() ) : $wp_post->the_post(); ?>
             <div class="slider-item">
-                <?php the_post_thumbnail(); ?>
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail(); ?>
+                </a>
                 <a href="<?php the_permalink(); ?>" class="slider-title">
                     <?php the_title(); ?>
                 </a>

@@ -7,6 +7,11 @@ h2 {
     margin-bottom: clamp(.5rem, 1vw, 1.3rem);
 }
 
+h6 {
+    font-family: $font-family-base;
+    font-weight: 400;
+}
+
 blockquote {
     font-family: $headings-font-family;
     font-weight: 200;

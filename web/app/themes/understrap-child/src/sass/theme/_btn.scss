@@ -119,6 +119,20 @@
         }
     }
 
+    &-link {
+        color: $dark;
+        background: none;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0;
+
+        @include line-hover( 'link', 100%, 0 );
+
+        &:hover {
+            color: $dark;
+        }
+    }
+
     &-outline {
         &-white {
             --c: #{$white};

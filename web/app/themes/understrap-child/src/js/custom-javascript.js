@@ -1,5 +1,6 @@
 import Glide from '@glidejs/glide';
 import { tns } from 'tiny-slider/src/tiny-slider';
+import { Carousel } from 'bootstrap';
 
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
@@ -37,12 +38,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // setNavbarStyle();
 
-    const slider = tns({
-        container: '.slider',
-        items: 2,
-        autoplay: false,
-        nav: false,
-        controlsContainer: '.slider-controls',
-        gutter: '15px'
-    });
+    const sliderExists = document.querySelector('.slider');
+    const carouselExists = document.querySelector('.b-carousel');
+
+    if( sliderExists ) {
+        tns({
+            container: '.slider',
+            items: 2,
+            autoplay: false,
+            nav: false,
+            controlsContainer: '.slider-controls',
+            gutter: '15px'
+        });
+    }
+
+    if( carouselExists ) {
+        tns({
+            container: '.b-carousel',
+            mode: 'gallery',
+            items: 1,
+            autoplay: false,
+            nav: false,
+            controlsContainer: '.b-carousel-controls'
+        });
+    }
+
+    const carousel = new Carousel('#bs-carousel');
+    const carouselCountCurrentEl = document.querySelector('.carousel-count-current');
+
+    carousel._element.addEventListener('slide.bs.carousel', event => {
+        carouselCountCurrentEl.innerText = event.to +1;
+    })
 })

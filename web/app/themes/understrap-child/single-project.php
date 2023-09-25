@@ -12,23 +12,22 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<div class="wrapper" id="single-wrapper">
+<div class="wrapper" id="single-project">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+    <div class="<?php echo esc_attr( $container ); ?>">
+        <?php breadcrumbs(); ?>
+    </div>
+
+	<div class="<?php echo esc_attr( $container ); ?>">
 
 		<div class="row">
-
-			<?php
-			// Do the left sidebar check and open div#primary.
-			get_template_part( 'global-templates/left-sidebar-check' );
-			?>
 
 			<main class="site-main" id="main">
 
 				<?php
 				while ( have_posts() ) {
 					the_post();
-					get_template_part( 'loop-templates/content', 'single' );
+					get_template_part( 'loop-templates/content', 'single-project' );
 
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) {
@@ -39,10 +38,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			</main>
 
-			<?php
-			// Do the right sidebar check and close div#primary.
-			get_template_part( 'global-templates/right-sidebar-check' );
-			?>
+			<div class="mt-5">
+                <?php get_template_part( 'global-templates/carousel', null, get_field('images') ); ?>
+            </div>
 
 		</div><!-- .row -->
 

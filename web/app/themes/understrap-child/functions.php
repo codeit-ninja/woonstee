@@ -132,3 +132,9 @@ function codeit_render_block( $block, $index ) {
         return get_template_part('templates/blocks/slider', null, array( 'index' => $index, 'block' => $block ));
     }
 }
+
+function breadcrumbs() {
+    if ( function_exists('yoast_breadcrumb') ) {
+        yoast_breadcrumb( '<div id="breadcrumbs">','</div>' );
+    }
+}

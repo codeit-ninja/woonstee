@@ -1,0 +1,7 @@
+.card {
+    &-xl {
+        --#{$prefix}card-spacer-y: 2rem;
+        --#{$prefix}card-spacer-x: 3rem;
+        --#{$prefix}card-title-spacer-y: 2rem;
+    }
+}

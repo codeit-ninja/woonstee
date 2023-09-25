@@ -1,8 +1,5 @@
 $prefix: 'codeit-';
 
-$primary: #C29582;
-$dark: #17191a;
-
 $grays: (
     "100": #e8e8e8,
     "200": #d1d1d1,
@@ -24,6 +21,11 @@ $gray-600: map-get($grays, '600');
 $gray-700: map-get($grays, '700');
 $gray-800: map-get($grays, '800');
 $gray-900: map-get($grays, '900');
+
+$primary: #C29582;
+$dark: #17191a;
+$light: #dcdddd;
+$white: $gray-100;
 
 $font-path: '../fonts';
 $font-size-base: 1.2rem;
@@ -57,3 +59,31 @@ $btn-padding-x: $input-btn-padding-x;
 $btn-font-weight: 300;
 $btn-box-shadow: none;
 $btn-border-width: 2px;
+
+$carousel-control-color:             $dark;
+$carousel-control-width:             15%;
+$carousel-control-opacity:           .5;
+$carousel-control-hover-opacity:     .9;
+$carousel-control-transition:        opacity .15s ease;
+
+$carousel-indicator-width:           30px;
+$carousel-indicator-height:          3px;
+$carousel-indicator-hit-area-height: 10px;
+$carousel-indicator-spacer:          3px;
+$carousel-indicator-opacity:         .5;
+$carousel-indicator-active-bg:       $white;
+$carousel-indicator-active-opacity:  1;
+$carousel-indicator-transition:      opacity .6s ease;
+
+$carousel-caption-width:             70%;
+$carousel-caption-color:             $white;
+$carousel-caption-padding-y:         1.25rem;
+$carousel-caption-spacer:            1.25rem;
+
+$carousel-control-icon-width:        3rem;
+
+$carousel-control-prev-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+$carousel-control-next-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+
+$carousel-transition-duration:       .6s;
+$carousel-transition:                transform 0 ease-in-out; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)

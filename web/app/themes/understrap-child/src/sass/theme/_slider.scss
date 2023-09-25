@@ -2,67 +2,79 @@
     overflow: visible;
 }
 
-.tns-item {
-    animation: fade-slide-out .12s forwards;
+.b-carousel {
     overflow: hidden;
-}
-
-.tns-slide-active, .tns-slide-active ~ * {
-    animation: fade-slide-in .12s forwards;
+    
+    .tns-slide-active {
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
 }
 
 .slider {
     display: flex;
     gap: 1rem;
 
+    .tns-item {
+        animation: fade-slide-out .12s forwards;
+        overflow: hidden;
+    }
+    
+    .tns-slide-active, 
+    .tns-slide-active ~ * {
+        animation: fade-slide-in .12s forwards;
+    }
+
     &-item {
         position: relative;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: .75rem;
 
-        img {
-            @include transition(.33s);
-
-            animation: zoom-out 1s linear forwards;
-        }
-
-        &:hover {
-            img {
-                animation: zoom-in 15s linear forwards;
-            }
+        a {
+            overflow: hidden;
         }
     }
 
     &-title {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        color: $gray-300;
-        padding: 1rem;
+        color: $dark;
         text-transform: uppercase;
-        z-index: 9;
-
-        @include transition(.12s);
-
-        &::after {
-            position: absolute;
-            content: " ";
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100px;
-            z-index: -1;
-
-            @include gradient-y(transparent, $dark);
-        }
-
-        &:hover {
-            color: $white;
-        }
     }
+
+    // &-title {
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: flex-end;
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     color: $gray-300;
+    //     padding: 1rem;
+    //     text-transform: uppercase;
+    //     z-index: 9;
+
+    //     @include transition(.12s);
+
+    //     &::after {
+    //         position: absolute;
+    //         content: " ";
+    //         left: 0;
+    //         bottom: 0;
+    //         width: 100%;
+    //         height: 100px;
+    //         z-index: -1;
+
+    //         @include gradient-y(transparent, $dark);
+    //     }
+
+    //     &:hover {
+    //         color: $white;
+    //     }
+    // }
 
     &-controls {
         display: flex;

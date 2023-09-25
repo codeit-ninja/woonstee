@@ -55,7 +55,8 @@
         "wpackagist-theme/twentytwentythree": "^1.0",
         "roots/acorn": "^3.1",
         "codeit-ninja/advanced-custom-fields-pro": "6.2.1",
-        "wpackagist-plugin/tinymce-advanced":"5.9.2"
+        "wpackagist-plugin/tinymce-advanced":"5.9.2",
+        "wpackagist-plugin/wordpress-seo":"21.1"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.7.1",

@@ -8,7 +8,8 @@
     background-color: transparent;
     border: none;
     border-bottom: 1px solid $dark;
-    padding: .85rem 1.5rem;
+    padding: .85rem 0;
+    box-shadow: none;
 
     &:focus {
         background-color: inherit;

@@ -1,0 +1,32 @@
+.carousel {
+    &-item {
+        img {
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
+    &-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-controls-prev,
+    &-controls-next {
+        background-color: transparent;
+        border: none;
+        font-size: 3rem;
+
+        &:hover,
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &-count {
+        display: flex;
+        justify-content: center;
+        width: 75px;
+    }
+}
