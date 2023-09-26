@@ -1,15 +1,15 @@
 $prefix: 'codeit-';
 
 $grays: (
-    "100": #e8e8e8,
-    "200": #d1d1d1,
-    "300": #b9baba,
-    "400": #a2a3a3,
-    "500": #8b8c8d,
-    "600": #747576,
-    "700": #5d5e5f,
-    "800": #454748,
-    "900": #2e3031,
+    "100": tint-color(#1F292E, 87),
+    "200": tint-color(#1F292E, 80),
+    "300": tint-color(#1F292E, 70),
+    "400": tint-color(#1F292E, 60),
+    "500": tint-color(#1F292E, 50),
+    "600": tint-color(#1F292E, 40),
+    "700": tint-color(#1F292E, 30),
+    "800": tint-color(#1F292E, 20),
+    "900": tint-color(#1F292E, 10),
 );
 
 $gray-100: map-get($grays, '100');
@@ -23,9 +23,14 @@ $gray-800: map-get($grays, '800');
 $gray-900: map-get($grays, '900');
 
 $primary: #C29582;
-$dark: #17191a;
-$light: #dcdddd;
-$white: $gray-100;
+$secondary: #2F3335;
+$dark: #1F292E;
+$light: $gray-100;
+$white: #fff;
+$info: #4eb9de;
+$success: #61D161;
+$warning: #EDC25E;
+$danger: #E24536;
 
 $font-path: '../fonts';
 $font-size-base: 1.2rem;

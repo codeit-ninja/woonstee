@@ -10,6 +10,7 @@
     border-bottom: 1px solid $dark;
     padding: .85rem 0;
     box-shadow: none;
+    font-family: var(--#{$prefix}font-monospace);
 
     &:focus {
         background-color: inherit;

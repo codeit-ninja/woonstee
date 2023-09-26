@@ -5,6 +5,7 @@
 
 // Grab a few bootstrap assets so we can use mixins, variables, etc
 @import "assets/bootstrap5/functions";
+@import "./theme/child_theme_variables";
 @import "assets/bootstrap5/variables";
 @import "assets/bootstrap5/maps";
 @import "assets/bootstrap5/mixins";
