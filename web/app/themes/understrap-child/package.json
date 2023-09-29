@@ -76,6 +76,7 @@
     },
     "dependencies": {
         "@glidejs/glide": "^3.6.0",
+        "masonry-layout": "^4.2.2",
         "tiny-slider": "^2.9.4"
     }
 }

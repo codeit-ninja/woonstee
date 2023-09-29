@@ -50,5 +50,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </div><!-- #single-wrapper -->
 
+<div class="d-flex flex-column">
+    <div class="d-flex align-items-center gap-5 flex-grow-1">
+        <h6 class="mb-0">Volg ons op</h6>
+        <div class="d-flex align-items-center gap-4">
+            <a href="#"><i class="fab fa-square-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </div>
+    <h2>DE WOONSTEE</h2>
+</div>
+
 <?php
 get_footer();

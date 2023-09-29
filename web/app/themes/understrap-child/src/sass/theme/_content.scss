@@ -2,3 +2,34 @@
     margin-top: 1rem;
     margin-bottom: 1.5rem;
 }
+
+.post-share-links {
+    .fab,
+    .fa-brands,
+    a {
+        color: $dark;
+        font-size: 2rem;
+    }
+
+    .post-share-links-social {
+        display: flex;
+        flex: 1;
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+}
+
+.title-with-line {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: $text-muted;
+
+    > span + span {
+        background-color: $text-muted;
+        height: 1px;
+        flex-grow: 1;
+        margin-left: 1rem;
+        margin-top: 3px;
+    }
+}

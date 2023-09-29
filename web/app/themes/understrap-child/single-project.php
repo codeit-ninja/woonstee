@@ -10,6 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
+$images = get_field('images');
 ?>
 
 <div class="wrapper" id="single-project">
@@ -24,23 +25,51 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<main class="site-main" id="main">
 
-				<?php
-				while ( have_posts() ) {
-					the_post();
-					get_template_part( 'loop-templates/content', 'single-project' );
+				<div class="row">
+                    <div class="col-6">
+                        <div class="sticky-top" style="top: 150px;">
+                            <?php
+                            while ( have_posts() ) {
+                                the_post();
+                                get_template_part( 'loop-templates/content', 'single-project' );
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
-				}
-				?>
+                                // If comments are open or we have at least one comment, load up the comment template.
+                                if ( comments_open() || get_comments_number() ) {
+                                    comments_template();
+                                }
+                            }
+                            ?>
+                            <div class="post-share-links">
+                                <span class="title-with-line"><span>Deel dit bericht</span><span></span></span>
+                                <div class="post-share-links-social">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
+                                        <i class="fa-brands fa-pinterest"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row g-1" data-masonry='{"percentPosition": true }'>
+                            <?php foreach( $images as $image ) : ?>
+                                <div class="col-12 col-md-6">
+                                    <?php get_template_part('global-templates/image', null, array( 'image_ID' => $image['ID'] )); ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
 
 			</main>
-
-			<div class="mt-5">
-                <?php get_template_part( 'global-templates/carousel', null, get_field('images') ); ?>
-            </div>
 
 		</div><!-- .row -->
 

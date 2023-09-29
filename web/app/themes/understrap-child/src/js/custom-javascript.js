@@ -1,4 +1,3 @@
-import Glide from '@glidejs/glide';
 import { tns } from 'tiny-slider/src/tiny-slider';
 import { Carousel } from 'bootstrap';
 

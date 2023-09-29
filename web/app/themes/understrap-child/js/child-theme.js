@@ -6743,29 +6743,6 @@
 	  }
 	})();
 
-	/*!
-	 * Glide.js v3.6.0
-	 * (c) 2013-2022 Jędrzej Chałubek (https://github.com/jedrzejchalubek/)
-	 * Released under the MIT License.
-	 */
-
-	/**
-	 * Test via a getter in the options object to see
-	 * if the passive property is accessed.
-	 *
-	 * @see https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection
-	 */
-	var supportsPassive$1 = false;
-	try {
-	  var opts$1 = Object.defineProperty({}, 'passive', {
-	    get: function get() {
-	      supportsPassive$1 = true;
-	    }
-	  });
-	  window.addEventListener('testPassive', null, opts$1);
-	  window.removeEventListener('testPassive', null, opts$1);
-	} catch (e) {}
-
 	var win$1 = window;
 	var raf = win$1.requestAnimationFrame || win$1.webkitRequestAnimationFrame || win$1.mozRequestAnimationFrame || win$1.msRequestAnimationFrame || function (cb) {
 	  return setTimeout(cb, 16);

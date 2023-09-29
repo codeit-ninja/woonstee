@@ -1,3 +1,7 @@
+a[href] {
+    display: inline-block;
+}
+
 h1 {
     font-size: 3rem;
 }
@@ -8,11 +12,29 @@ h2 {
 }
 
 h6 {
+    color: $gray-500;
     font-family: $font-family-base;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 blockquote {
     font-family: $headings-font-family;
     font-weight: 200;
+}
+
+.fa-square-facebook {
+    color: #4267B2;
+}
+
+.fa-instagram {
+    color: transparent;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-pinterest {
+    color: #E60023;
 }
