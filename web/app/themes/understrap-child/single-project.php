@@ -39,17 +39,16 @@ $images = get_field('images');
                                 }
                             }
                             ?>
-                            <div class="post-share-links">
-                                <span class="title-with-line"><span>Deel dit bericht</span><span></span></span>
+                            <div class="post-share-links mt-5">
                                 <div class="post-share-links-social">
                                     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
-                                        <i class="fa-brands fa-facebook"></i>
+                                        <i class="fa-brands fa-facebook-f"></i>
                                     </a>
                                     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
                                         <i class="fa-brands fa-twitter"></i>
                                     </a>
                                     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
-                                        <i class="fa-brands fa-pinterest"></i>
+                                        <i class="fa-brands fa-pinterest-p"></i>
                                     </a>
                                     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
                                         <i class="fa-brands fa-whatsapp"></i>

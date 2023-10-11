@@ -1,5 +1,6 @@
 a[href] {
     display: inline-block;
+    text-decoration: none;
 }
 
 h1 {
@@ -22,19 +23,21 @@ blockquote {
     font-weight: 200;
 }
 
-.fa-square-facebook {
-    color: #4267B2;
-}
+.fab,
+.fa-brands {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $dark;
+    border-radius: 50%;
+    text-decoration: none;
+    color: $dark;
 
-.fa-instagram {
-    color: transparent;
-    background: #d6249f;
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    &:hover {
+        background-color: $gray-100;
 
-.fa-pinterest {
-    color: #E60023;
+        @include transition(.12s);
+    }
 }

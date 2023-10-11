@@ -13,17 +13,6 @@
             text-transform: uppercase;
             color: $gray-900;
         }
-
-        .fa-brands,
-        .fab {
-            font-size: 2rem;
-
-            @include transition();
-
-            &:hover {
-                opacity: .8;
-            }
-        }
     }
 
     .form-control {
