@@ -25,18 +25,19 @@ blockquote {
 
 .fab,
 .fa-brands {
+    background-color: $gray-100;
     display: flex;
     width: 45px;
     height: 45px;
     justify-content: center;
     align-items: center;
-    border: 1px solid $dark;
+    border: 1px solid $black;
     border-radius: 50%;
     text-decoration: none;
-    color: $dark;
+    color: $black;
 
     &:hover {
-        background-color: $gray-100;
+        background-color: $white;
 
         @include transition(.12s);
     }
