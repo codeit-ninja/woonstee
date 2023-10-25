@@ -19,3 +19,10 @@
         outline: none;
     }
 }
+
+.text-bg-dark {
+    .form-control {
+        border-bottom: 1px solid $white;
+        color: $white;
+    }
+}

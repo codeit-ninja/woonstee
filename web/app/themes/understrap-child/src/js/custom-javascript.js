@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sliderExists = document.querySelector('.slider');
     const carouselExists = document.querySelector('.b-carousel');
 
-    if( sliderExists ) {
+    if (sliderExists) {
         tns({
             container: '.slider',
             items: 2,
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if( carouselExists ) {
+    if (carouselExists) {
         tns({
             container: '.b-carousel',
             mode: 'gallery',
@@ -62,10 +62,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const carousel = new Carousel('#bs-carousel');
-    const carouselCountCurrentEl = document.querySelector('.carousel-count-current');
+    const carouselEl = document.getElementById('bs-carousel')
+    
+    if( carouselEl ) {
+        const carousel = new Carousel('#bs-carousel');
+        const carouselCountCurrentEl = document.querySelector('.carousel-count-current');
+    
+        carousel._element.addEventListener('slide.bs.carousel', event => {
+            carouselCountCurrentEl.innerText = event.to + 1;
+        })
+    }
 
-    carousel._element.addEventListener('slide.bs.carousel', event => {
-        carouselCountCurrentEl.innerText = event.to +1;
+    // Bootstrap 5.2 has an issue where offcanvas elements generate duplicate backdrops
+    // @see https://stackoverflow.com/questions/71832234/bootstrap-offcanvas-fade-duplicating-between-different-parts-of-the-site
+    const offcanvas = document.getElementsByClassName('offcanvas');
+
+    [...offcanvas].forEach(canvas => {
+        canvas.addEventListener('show.bs.offcanvas', () => {
+            const backdrops = document.getElementsByClassName('offcanvas-backdrop fade show');
+            console.log(backdrops)
+
+            // Remove the duplicates
+            for (let i = 0; i < backdrops.length; i++) {
+                backdrops[i].remove()
+            }
+        })
     })
 })
