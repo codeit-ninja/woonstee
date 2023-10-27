@@ -15,11 +15,9 @@ $images = get_field('images');
 
 <div class="wrapper" id="single-project">
 
-    <header class="vh-100 header-bg-image" style="background-image: url(<?php echo the_post_thumbnail_url('full'); ?>);background-position: center;background-size: cover;">
-        <div class="<?php echo esc_attr( $container ); ?>">
-            <?php breadcrumbs(); ?>
-        </div>
-    </header>
+    <div class="<?php echo esc_attr( $container ); ?>">
+        <?php breadcrumbs(); ?>
+    </div>
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 

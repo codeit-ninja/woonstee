@@ -144,6 +144,14 @@ function codeit_render_block($block, $index)
     if ($block['acf_fc_layout'] === 'block_price_table') {
         return get_template_part('templates/blocks/price', 'table', array('index' => $index, 'block' => $block));
     }
+
+    if ($block['acf_fc_layout'] === 'block_cta') {
+        return get_template_part('templates/blocks/cta', null, array('index' => $index, 'block' => $block));
+    }
+
+    if ($block['acf_fc_layout'] === 'block_cta_image') {
+        return get_template_part('templates/blocks/cta', 'image', array('index' => $index, 'block' => $block));
+    }
 }
 
 function breadcrumbs()
@@ -209,3 +217,21 @@ function fix_svg()
           </style>';
 }
 add_action('admin_head', 'fix_svg');
+
+function parse_shortcode_atts( string $shortcode ) {
+    // Store the shortcode attributes in an array heree
+    $attributes = [];
+
+    if (preg_match_all('/\w+\=\".*?\"/', $shortcode, $key_value_pairs)) {
+
+        // Now split up the key value pairs
+        foreach($key_value_pairs[0] as $kvp) {
+            $kvp = str_replace('"', '', $kvp);
+            $pair = explode('=', $kvp);
+            $attributes[$pair[0]] = $pair[1];
+        }
+    }
+
+    // Return the array
+    return $attributes;
+}

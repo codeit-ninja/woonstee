@@ -20,12 +20,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<main class="site-main" id="main" role="main">
 
-                    <!-- <div class="container">
-                        <blockquote class="fs-2 text-center">
-                            <?php the_field('quote'); ?>
-                        </blockquote>
-                    </div> -->
-
                     <!-- Render blocks -->
 					<?php get_template_part('loop-templates/blocks/block', 'editor'); ?>
 

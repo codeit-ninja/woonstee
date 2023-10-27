@@ -1,6 +1,6 @@
 <?php
 /**
- * nlock editor
+ * Block editor
  * 
  * Render blocks
  * 
