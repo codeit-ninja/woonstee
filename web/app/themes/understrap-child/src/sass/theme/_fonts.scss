@@ -174,3 +174,21 @@
     font-weight: 300;
     descent-override: 0%;
 }
+
+@font-face {
+    font-family: 'Goldenbook';
+    font-weight: 300;
+    src: local('Goldenbook'), url('#{$font-path}/goldenbook/Goldenbook-light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Goldenbook';
+    font-weight: 400;
+    src: local('Goldenbook'), url('#{$font-path}/goldenbook/Goldenbook-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Goldenbook';
+    font-weight: 600;
+    src: local('Goldenbook'), url('#{$font-path}/goldenbook/Goldenbook-bold.woff2') format('woff2');
+}

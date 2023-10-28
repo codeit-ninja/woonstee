@@ -11,7 +11,7 @@
 
     &-odd {
         &::after {
-            background-color: tint-color($primary, 70%);
+            background-color: $primary;
             top: -40px;
             right: -40px;
         }

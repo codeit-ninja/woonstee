@@ -59,6 +59,38 @@
         --#{$prefix}btn-font-weight: 500;
     }
 
+    &-white {
+        --#{$prefix}btn-bg: #{$white};
+        --#{$prefix}btn-color: #{$dark};
+        --#{$prefix}btn-hover-color: #{$dark};
+        --#{$prefix}btn-active-color: #{$dark};
+    }
+
+    &-small {
+        --#{$prefix}btn-bg: transparent;
+        --#{$prefix}btn-color: #{$dark};
+        --#{$prefix}btn-border-color: #{$dark};
+        --#{$prefix}btn-hover-bg: transparent;
+        --#{$prefix}btn-hover-color: #{$dark};
+        --#{$prefix}btn-border-hover-color: #{$dark};
+
+        background-color: var(--#{$prefix}btn-bg);
+        color: var(--#{$prefix}btn-color);
+        border: 0;
+        border-bottom: 1px solid var(--#{$prefix}btn-border-color);
+        text-transform: uppercase;
+        font-size: 1rem;
+        padding: 0;
+
+        @include transition(.5s);
+
+        &:hover {
+            background-color: var(--#{$prefix}btn-hover-bg);
+            color: var(--#{$prefix}btn-hover-color);
+            border-bottom: 1px solid var(--#{$prefix}btn-border-hover-color);
+        }
+    }
+
     &-outline {
         &-primary {
             --#{$prefix}btn-bg: #{$primary};

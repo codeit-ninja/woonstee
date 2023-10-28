@@ -1,4 +1,6 @@
 .card {
+    background-color: transparent;
+
     @include transition(.12s);
 
     &-xl {
@@ -7,33 +9,37 @@
         --#{$prefix}card-title-spacer-y: 2rem;
     }
 
-    &:nth-child(2) {
+    &:first-child {
+        background-color: $dark;
+        --#{$prefix}card-color: #fff;
+        --#{$prefix}card-cap-color: #fff;
+
+        .btn {
+            --#{$prefix}btn-bg: #{$white};
+            --#{$prefix}btn-color: #{$dark};
+            --#{$prefix}btn-hover-color: #{$dark};
+            --#{$prefix}btn-active-color: #{$dark};
+            --#{$prefix}btn-active-color: #{$dark};
+        }
+    }
+
+    &:nth-child(even) {
         position: relative;
 
-        &::before,
         &::after {
             background-color: $gray-900;
             position: absolute;
             display: block;
             content: " ";
-            height: 30%;
+            height: 50%;
             width: 1px;
             transform: translateY(-50%);
         }
 
-        &::before {
-            left: 0;
-            top: 45%;
-        }
-
         &::after {
             right: 0;
-            top: 55%;
+            top: 50%;
         }
-    }
-
-    &:hover {
-        background-color: $gray-100;
     }
 
     &-header {

@@ -56,9 +56,10 @@
         "roots/acorn": "^3.1",
         "codeit-ninja/advanced-custom-fields-pro": "6.2.1",
         "wpackagist-plugin/tinymce-advanced":"5.9.2",
-        "wpackagist-plugin/wordpress-seo":"21.1",
+        "wpackagist-plugin/wordpress-seo":"21.4",
         "wpackagist-plugin/contact-form-7":"5.8",
-        "codeit-ninja/acf-extended-pro": "dev-master"
+        "codeit-ninja/acf-extended-pro": "dev-master",
+        "wordpress-premium/wordpress-seo-premium": "21.4"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.7.1",

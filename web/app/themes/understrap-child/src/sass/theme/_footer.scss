@@ -16,11 +16,11 @@
     }
 
     .fa-brands {
-        background-color: $white;
+        background-color: $gray-100;
 
         &:hover {
-            background-color: $gray-800;
-            color: $white;
+            background-color: $white;
+            color: $black;
         }
     }
 
@@ -43,4 +43,8 @@
         text-decoration: none;
         border-bottom: 1px dashed tint-color($dark, 50%);
     }
+}
+
+.footer-widget {
+    width: 50%;
 }

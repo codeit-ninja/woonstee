@@ -36,7 +36,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php // Closing div#page from header.php. ?>
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+<?php 
+wp_footer(); 
+do_action( 'insert_before_body_end' );
+?>
 
 </body>
 

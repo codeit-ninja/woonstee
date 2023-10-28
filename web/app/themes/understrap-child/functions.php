@@ -235,3 +235,123 @@ function parse_shortcode_atts( string $shortcode ) {
     // Return the array
     return $attributes;
 }
+
+function theme_slug_filter_wp_title( $title_parts ) {
+    if ( is_404() ) {
+        $title_parts['title'] = 'Pagina niet gevonden';
+    }
+
+    return $title_parts;
+} 
+
+// Hook into document_title_parts
+add_filter( 'document_title_parts', 'theme_slug_filter_wp_title' );
+
+add_action('admin_init', function () {
+    // Redirect any user trying to access comments page
+    global $pagenow;
+    
+    if ($pagenow === 'edit-comments.php') {
+        wp_safe_redirect(admin_url());
+        exit;
+    }
+
+    // Remove comments metabox from dashboard
+    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+
+    // Disable support for comments and trackbacks in post types
+    foreach (get_post_types() as $post_type) {
+        if (post_type_supports($post_type, 'comments')) {
+            remove_post_type_support($post_type, 'comments');
+            remove_post_type_support($post_type, 'trackbacks');
+        }
+    }
+});
+
+// Close comments on the front-end
+add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+
+// Hide existing comments
+add_filter('comments_array', '__return_empty_array', 10, 2);
+
+// Remove comments page in menu
+add_action('admin_menu', function () {
+    remove_menu_page('edit-comments.php');
+});
+
+// Remove comments links from admin bar
+add_action('init', function () {
+    if (is_admin_bar_showing()) {
+        remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
+    }
+});
+
+// Prevent search queries.
+add_action(
+	'parse_query',
+	function ( $query, $error = true ) {
+		if ( is_search() && ! is_admin() ) {
+			$query->is_search       = false;
+			$query->query_vars['s'] = false;
+			$query->query['s']      = false;
+			if ( true === $error ) {
+				$query->is_404 = true;
+			}
+		}
+	},
+	15,
+	2
+);
+
+// Remove the Search Widget.
+add_action(
+	'widgets_init',
+	function () {
+		unregister_widget( 'WP_Widget_Search' );
+	}
+);
+
+// Remove the search form.
+add_filter( 'get_search_form', '__return_empty_string', 999 );
+
+// Remove the core search block.
+add_action(
+	'init',
+	function () {
+		if ( ! function_exists( 'unregister_block_type' ) || ! class_exists( 'WP_Block_Type_Registry' ) ) {
+			return;
+		}
+		$block = 'core/search';
+		if ( WP_Block_Type_Registry::get_instance()->is_registered( $block ) ) {
+			unregister_block_type( $block );
+		}
+	}
+);
+
+// Remove admin bar menu search box.
+add_action(
+	'admin_bar_menu',
+	function ( $wp_admin_bar ) {
+		$wp_admin_bar->remove_menu( 'search' );
+	},
+	11
+);
+
+add_action('wp_enqueue_scripts', 'deregister_acf_styles');
+function deregister_acf_styles(){
+    
+    // Deregister ACF Form style
+    wp_deregister_style('acf-global');
+    wp_deregister_style('acf-input');
+    wp_deregister_style('acf-extended-input');
+    
+    // Avoid dependency conflict
+    wp_register_style('acf-global', false);
+    wp_register_style('acf-input', false);
+    wp_register_style('acf-extended-input', false);
+}
+
+function offcanvas_form() {
+    
+}

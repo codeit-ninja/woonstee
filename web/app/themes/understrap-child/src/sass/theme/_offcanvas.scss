@@ -1,8 +1,107 @@
-.offcanvas {
-    min-width: 450px;
+.has-offcanvas {
+    position: relative;
 
-    &-form {
-        min-width: 600px;
-        padding: 3rem 2rem;
+    --#{$prefix}offcanvas-width: 40vw;
+    --#{$prefix}offcanvas-bg: #{$primary};
+    --#{$prefix}offcanvas-animation-duration: .15s;
+    --#{$prefix}offcanvas-animation-delay: .15s;
+    --#{$prefix}btn-bg: transparent;
+
+    &::after {
+        background-color: $gray-200;
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        align-self: stretch;
+        width: 100%;
+        height: 100%;
+        flex-grow: 1;
+    }
+
+    @include media-breakpoint-down(lg) {
+        --#{$prefix}offcanvas-width: 100vw;
+        --#{$prefix}offcanvas-animation-duration: .35s;
+        --#{$prefix}offcanvas-animation-delay: .35s;
+    }
+}
+
+.offcanvas-open {
+    animation: offcanvas-open-body var(--#{$prefix}offcanvas-animation-duration) forwards;
+
+    wc-offcanvas {
+        animation: offcanvas-open var(--#{$prefix}offcanvas-animation-duration) forwards;
+        animation-delay: var(--#{$prefix}offcanvas-animation-delay);
+    }
+}
+
+.offcanvas-closed {
+    transform: translateX(calc(var(--#{$prefix}offcanvas-width) * -1));
+    animation: offcanvas-close-body var(--#{$prefix}offcanvas-animation-duration) forwards;
+    animation-delay: var(--#{$prefix}offcanvas-animation-delay);
+
+    wc-offcanvas {
+        animation: offcanvas-close var(--#{$prefix}offcanvas-animation-duration) forwards;
+    }
+}
+
+wc-offcanvas {
+    background-color: var(--#{$prefix}offcanvas-bg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--#{$prefix}offcanvas-width);
+    height: 100dvh;
+    z-index: 90;
+    transform: translateX(calc(var(--#{$prefix}offcanvas-width) * 2));
+    padding: 3rem 2.5rem;
+    
+}
+
+wc-offcanvas-header {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.offcanvas-btn-close {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+
+    @include transition(.12s);
+
+    &:hover {
+        margin-left: -.3rem;
+    }
+}
+
+@keyframes offcanvas-open-body {
+    to {
+        transform: translateX(calc(var(--#{$prefix}offcanvas-width) * -1));
+    }
+}
+
+@keyframes offcanvas-open {
+    to {
+        transform: translateX(var(--#{$prefix}offcanvas-width));
+    }
+}
+
+@keyframes offcanvas-close-body {
+    from {
+        transform: translateX(calc(var(--#{$prefix}offcanvas-width) * -1));
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes offcanvas-close {
+    from {
+        transform: translateX(var(--#{$prefix}offcanvas-width));
+    }
+    to {
+        transform: translateX(calc(var(--#{$prefix}offcanvas-width) * 2));
     }
 }

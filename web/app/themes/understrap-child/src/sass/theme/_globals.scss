@@ -5,10 +5,18 @@
     }
 }
 
-#single-project {
+#single-project,
+#error-404-wrapper {
     margin-top: 78px;
+    flex-grow: 1;
 }
 
 .type-project {
     max-width: 840px;
+}
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }

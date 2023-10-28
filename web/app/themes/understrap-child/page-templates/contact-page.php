@@ -20,25 +20,19 @@ $showroom = get_field('showroom');
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-		<div class="row g-5">
+		<div class="row g-3 align-items-stretch">
             <div class="col-12">
-                <?php 
-                the_title(
-                    '<header class="entry-header"><h1 class="entry-title">',
-                    '</h1></header><!-- .entry-header -->'
-                ); 
-                ?>
             </div>
             <div class="col-md-6">
-                <?php echo do_shortcode('[contact-form-7 id="22ed420" title="Contact formulier"]'); ?>
+                <div class="form p-5">
+                    <h2>Contact formulier</h2>
+                    <?php echo do_shortcode('[contact-form-7 id="22ed420" title="Contact formulier"]'); ?>
+                </div>
             </div>
             <div class="col-md-6">
-                <div class="card card-xl text-bg-light border-light">
-                    <?php get_template_part('global-templates/image', null, array( 'image_ID' => $showroom['image'] )); ?>
-                    <div class="card-body">
-                        <h2 class="card-title">Showroom</h2>
-                        <p class="card-text"><?php echo $showroom['address']; ?></p>
-                    </div>
+                <div class="p-5">
+                    <h2>Showroom</h2>
+                    <p><?php echo $showroom['address']; ?></p>
                 </div>
             </div>
 

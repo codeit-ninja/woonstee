@@ -1,6 +1,8 @@
 import { tns } from 'tiny-slider/src/tiny-slider';
 import { Carousel } from 'bootstrap';
 
+import './components/offcanvas';
+
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.body.classList.remove('preload');
@@ -73,19 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    // Bootstrap 5.2 has an issue where offcanvas elements generate duplicate backdrops
-    // @see https://stackoverflow.com/questions/71832234/bootstrap-offcanvas-fade-duplicating-between-different-parts-of-the-site
-    const offcanvas = document.getElementsByClassName('offcanvas');
+    const offcanvasOpenBtns = document.querySelectorAll('[data-offcanvas-open]');
 
-    [...offcanvas].forEach(canvas => {
-        canvas.addEventListener('show.bs.offcanvas', () => {
-            const backdrops = document.getElementsByClassName('offcanvas-backdrop fade show');
-            console.log(backdrops)
+    [...offcanvasOpenBtns]?.forEach(btn => btn.addEventListener('click', () => {
+        /** @type {HTMLElement} */
+        const target = document.querySelector(btn.dataset.offcanvasOpen);
 
-            // Remove the duplicates
-            for (let i = 0; i < backdrops.length; i++) {
-                backdrops[i].remove()
-            }
-        })
-    })
+        target?.setAttribute('open', 'true');
+    }));
 })

@@ -26,9 +26,9 @@ $block = $args['block'];
                     <?php if( $price_table['use_button'] ) : ?>
                         <div class="mt-5">
                             <?php if( $price_table['use_form'] ) : ?>
-                                <button class="btn btn-outline-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-form-<?php echo $key; ?>"><?php echo $price_table['button_text'] ?></button>
+                                <button class="btn btn-dark" data-offcanvas-open="#<?php echo 'offcanvas-form-' . $key; ?>"><?php echo $price_table['button_text'] ?></button>
                             <?php else : ?>
-                                <a role="button" class="btn btn-outline-primary" href="<?php echo $price_table['button_link'] ?>"><?php echo $price_table['button_text'] ?></a>
+                                <a role="button" class="btn btn-dark" href="<?php echo $price_table['button_link'] ?>"><?php echo $price_table['button_text'] ?></a>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
@@ -37,10 +37,12 @@ $block = $args['block'];
             
             <?php 
             if( $price_table['use_form'] ) {
-                get_template_part('templates/offcanvas/form', null, array(
-                    'id'        => 'offcanvas-form-' . $key,
-                    'shortcode' => $price_table['form_shortcode']
-                )); 
+                add_action('insert_before_body_end', function () use ($price_table, $key) {
+                    get_template_part('templates/offcanvas/form', null, array(
+                        'id'        => 'offcanvas-form-' . $key,
+                        'shortcode' => $price_table['form_shortcode']
+                    ));
+                });
             }
             ?>
 

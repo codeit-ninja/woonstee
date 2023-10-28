@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7602b3850c2e9be7c712474e51218ca",
+    "content-hash": "4cb7d78b0d59335d3c7656aafcd6934f",
     "packages": [
         {
             "name": "brick/math",
@@ -5392,6 +5392,34 @@
             "time": "2022-03-08T17:03:00+00:00"
         },
         {
+            "name": "wordpress-premium/wordpress-seo-premium",
+            "version": "21.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeit-ninja/wordpress-seo-premium.git",
+                "reference": "17af0c6a9bb89b56a03ffc738497d2e04ea2ec1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeit-ninja/wordpress-seo-premium/zipball/17af0c6a9bb89b56a03ffc738497d2e04ea2ec1e",
+                "reference": "17af0c6a9bb89b56a03ffc738497d2e04ea2ec1e",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://code-it-ninja.repo.repman.io/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://code-it-ninja.repo.repman.io/downloads",
+            "description": "Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.",
+            "support": {
+                "source": "https://github.com/codeit-ninja/wordpress-seo-premium/tree/v21.4"
+            },
+            "time": "2023-10-27T11:42:26+00:00"
+        },
+        {
             "name": "wpackagist-plugin/contact-form-7",
             "version": "5.8",
             "source": {
@@ -5429,15 +5457,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "21.1",
+            "version": "21.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/21.1"
+                "reference": "tags/21.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
