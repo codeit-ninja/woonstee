@@ -22,12 +22,4 @@
         );
         ?>
     </div>
-    <div class="member-about">
-        <?php 
-        printf(
-            '%s',
-            $args['about_me']
-        );
-        ?>
-    </div>
 </div>
