@@ -1,5 +1,5 @@
 import { tns } from 'tiny-slider/src/tiny-slider';
-import { Carousel } from 'bootstrap';
+import { Carousel, Popover } from 'bootstrap';
 
 import './components/offcanvas';
 
@@ -83,4 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         target?.setAttribute('open', 'true');
     }));
+
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new Popover(popoverTriggerEl, { trigger: 'hover focus' }))
 })

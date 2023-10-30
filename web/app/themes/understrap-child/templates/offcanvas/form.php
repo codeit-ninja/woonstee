@@ -9,6 +9,7 @@ $shortcode = $args['shortcode'];
     <wc-offcanvas-header>
         <button class="offcanvas-btn-close">
             <i class="fa-thin fa-arrow-left-long"></i>
+            <span><?php _e('Ga terug', 'understrap') ?></span>
         </button>
     </wc-offcanvas-header>
     <?php echo do_shortcode( $shortcode ); ?>

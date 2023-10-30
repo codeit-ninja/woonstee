@@ -25,14 +25,12 @@ $showroom = get_field('showroom');
             </div>
             <div class="col-md-6">
                 <div class="form p-5">
-                    <h2>Contact formulier</h2>
                     <?php echo do_shortcode('[contact-form-7 id="22ed420" title="Contact formulier"]'); ?>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="p-5">
-                    <h2>Showroom</h2>
-                    <p><?php echo $showroom['address']; ?></p>
+                    <?php the_content(); ?>
                 </div>
             </div>
 

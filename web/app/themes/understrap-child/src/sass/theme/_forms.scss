@@ -1,6 +1,21 @@
 .wpcf7 {
-    p {
-        margin-bottom: 0;
+    .screen-reader-response {
+        position: absolute;
+        visibility: hidden;
+        clip-path: inset(50%);
+        height: 1px;
+        width: 1px;
+    }
+
+    .wpcf7-not-valid-tip,
+    .wpcf7-response-output {
+        color: $danger;
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
+
+    .wpcf7-response-output {
+        margin-top: 2rem;
     }
 }
 

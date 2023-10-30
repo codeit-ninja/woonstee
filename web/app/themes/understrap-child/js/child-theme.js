@@ -14699,6 +14699,10 @@
 	    const target = document.querySelector(btn.dataset.offcanvasOpen);
 	    target?.setAttribute('open', 'true');
 	  }));
+	  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+	  [...popoverTriggerList].map(popoverTriggerEl => new Popover(popoverTriggerEl, {
+	    trigger: 'hover focus'
+	  }));
 	});
 
 	exports.Alert = alert;

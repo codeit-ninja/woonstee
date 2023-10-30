@@ -65,6 +65,9 @@ wc-offcanvas-header {
 }
 
 .offcanvas-btn-close {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
     background-color: transparent;
     border: none;
     font-size: 2rem;
@@ -73,6 +76,11 @@ wc-offcanvas-header {
 
     &:hover {
         margin-left: -.3rem;
+    }
+
+    span {
+        font-size: 1.1rem;
+        margin-top: -3px;
     }
 }
 

@@ -338,20 +338,49 @@ add_action(
 	11
 );
 
-add_action('wp_enqueue_scripts', 'deregister_acf_styles');
-function deregister_acf_styles(){
+add_action('wp_enqueue_scripts', 'deregister_styles');
+function deregister_styles(){
     
     // Deregister ACF Form style
     wp_deregister_style('acf-global');
     wp_deregister_style('acf-input');
     wp_deregister_style('acf-extended-input');
+    wp_dequeue_style('contact-form-7');
     
     // Avoid dependency conflict
     wp_register_style('acf-global', false);
     wp_register_style('acf-input', false);
     wp_register_style('acf-extended-input', false);
+    wp_register_style('contact-form-7', false);
 }
 
-function offcanvas_form() {
-    
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+function social_links() {
+    $html = '';
+    $html .= '<div class="d-flex gap-3">';
+
+    foreach( get_field('social_links', 'option') as $social ) {
+        $html .= '<a href="'. $social['link'] .'">'. $social['icon'] .'</a>';
+    }
+
+    $html .= '</div>';
+
+    return $html;
 }
+add_shortcode('social-links', 'social_links');
+
+function team_members() {
+    ob_start();
+
+    foreach( get_field('team_members', 'options') as $member ) {
+        get_template_part('loop-templates/team', 'member', $member);
+    }
+
+    $data = ob_get_contents();
+
+    ob_end_clean();
+
+    return sprintf('<div class="row gy-5" id="team-members">%s</div>', $data);
+}
+add_shortcode('team-members', 'team_members');

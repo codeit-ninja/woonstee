@@ -25,7 +25,7 @@ $gray-900: map-get($grays, '900');
 $white: #fff;
 $primary: #e2dbd1;
 $secondary: #2F3335;
-$tetriary: #e2dbd1;
+$tetriary: #C89A86;
 $dark: #1F292E;
 $light: $gray-100;
 $white: #fff;
@@ -39,6 +39,8 @@ $font-path: '../fonts';
 $font-size-base: 1.2rem;
 $font-weight-base: 300;
 $font-family-base: 'Sweet Sans Pro';
+
+$body-color: $dark;
 
 $spacer: 1rem;
 $enable-shadows: true;
@@ -112,3 +114,18 @@ $card-height:                       null;
 $card-color:                        null;
 $card-bg:                           $white;
 $card-img-overlay-padding:          $spacer;
+
+$popover-bg:                        $white;
+$popover-max-width:                 556px;
+$popover-border-width:              0;
+$popover-border-color:              var(--#{$prefix}border-color-translucent);
+$popover-border-radius:             0;
+$popover-inner-border-radius:       subtract($popover-border-radius, $popover-border-width);
+$popover-box-shadow:                none;
+
+$popover-body-color:                $body-color;
+$popover-body-padding-y:            $spacer;
+$popover-body-padding-x:            $spacer;
+
+$popover-arrow-width:               1rem;
+$popover-arrow-height:              .5rem;

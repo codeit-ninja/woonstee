@@ -1,4 +1,5 @@
-a[href] {
+a {
+    color: $tetriary;
     display: inline-block;
     text-decoration: none;
 }
@@ -12,10 +13,17 @@ h2 {
     margin-bottom: clamp(.5rem, 1vw, 1.3rem);
 }
 
-h6 {
-    color: $gray-500;
+h5 {
     font-family: $font-family-base;
     font-weight: 600;
+    font-size: 1.3rem;
+}
+
+h6 {
+    text-transform: uppercase;
+    font-family: $font-family-base;
+    font-weight: 500;
+    font-size: .9rem;
 }
 
 blockquote {

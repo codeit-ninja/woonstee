@@ -13,7 +13,7 @@ $block = $args['block'];
 
             <div class="card text-center col-lg-4">
                 <div class="card-header">
-                    <h5 class="card-title"><?php echo $price_table['title'] ?></h5>
+                    <h4 class="card-title"><?php echo $price_table['title'] ?></h4>
                     <span class="block-price-table-price"><?php echo $price_table['price'] ?></span>
                     <span class="block-price-table-quantity"><?php echo $price_table['quantity'] ?></span>
                 </div>

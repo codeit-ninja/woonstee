@@ -5,7 +5,7 @@
 $index = $args['index'];
 $block = $args['block'];
 
-$style = $block['background_color'] ? 'style="background-color: '. $block['background_color'] .';"' : '';
+$style = $block['background_color'] ? 'style="background-color: ' . $block['background_color'] . ';"' : '';
 ?>
 
 <div class="container">
