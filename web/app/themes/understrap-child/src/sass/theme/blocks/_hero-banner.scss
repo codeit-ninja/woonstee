@@ -1,0 +1,27 @@
+.block-hero-banner {
+    background-color: var(--#{$prefix}banner-bg);
+    padding: 5rem 0;
+    //background-color: tint-color($primary, 20%);
+
+    &-heading {
+        font-family: $headings-font-family;
+        font-weight: 500;
+        line-height: 1;
+        white-space: nowrap;
+
+        @include font-size(3rem);
+    }
+
+    &-text {
+        @include font-size(1.4rem);
+    }
+}
+
+
+@include media-breakpoint-down(lg) {
+    .block-hero-banner {
+        &-heading {
+            white-space: normal;
+        }
+    }
+}

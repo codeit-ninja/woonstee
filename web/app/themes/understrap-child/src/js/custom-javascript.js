@@ -1,12 +1,18 @@
 import { tns } from 'tiny-slider/src/tiny-slider';
-import { Carousel, Popover } from 'bootstrap';
+import { Carousel } from 'bootstrap';
+import AOS from 'aos';
 
 import './components/offcanvas';
+import './components/modal';
 
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.body.classList.remove('preload');
+        AOS.init({
+           once: true
+        });
     }, 500);
+
     const style = getComputedStyle(document.body);
 
     // document.addEventListener('scroll', () => {
@@ -75,15 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    const offcanvasOpenBtns = document.querySelectorAll('[data-offcanvas-open]');
+    const openComponentsElements = document.querySelectorAll('[data-offcanvas-open], [data-modal-open]');
 
-    [...offcanvasOpenBtns]?.forEach(btn => btn.addEventListener('click', () => {
+    [...openComponentsElements]?.forEach(element => element.addEventListener('click', () => {
         /** @type {HTMLElement} */
-        const target = document.querySelector(btn.dataset.offcanvasOpen);
-
+        const target = document.querySelector(element.dataset.offcanvasOpen ?? element.dataset.modalOpen);
+        console.log(target)
+        element?.classList.toggle('active');
         target?.setAttribute('open', 'true');
     }));
-
-    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new Popover(popoverTriggerEl, { trigger: 'hover focus' }))
 })

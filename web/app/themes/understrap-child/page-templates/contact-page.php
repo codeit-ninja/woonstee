@@ -21,14 +21,12 @@ $showroom = get_field('showroom');
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row g-3 align-items-stretch">
-            <div class="col-12">
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-7 col-lg-6 order-md-0 order-1">
                 <div class="form p-5">
                     <?php echo do_shortcode('[contact-form-7 id="22ed420" title="Contact formulier"]'); ?>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5 col-lg-6 order-md-1 order-0">
                 <div class="p-5">
                     <?php the_content(); ?>
                 </div>

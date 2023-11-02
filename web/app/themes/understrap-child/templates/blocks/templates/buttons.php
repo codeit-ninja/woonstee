@@ -14,24 +14,8 @@ if( $args['inline'] ) {
 <div class="block-template block-template-buttons">
     <div class="d-flex gap-3 <?php echo $flex_direction; ?> <?php echo $flex_align; ?> align-items-start">
         <?php
-        foreach ($buttons as $button) :
-            $variant = 'btn-' . $button['color'];
-            $stretch = '';
-
-            if( $button['variant'] === 'outline' ) {
-                $variant = 'btn-outline-' . $button['color'];
-            }
-
-            if( $button['stretch']) {
-                $stretch = 'w-100';
-            }
-
-            printf(
-                '<a role="button" href="%s" class="btn %s">%s</a>',
-                esc_url($button['link']),
-                esc_attr(join(" ", array( $variant, $stretch ))),
-                esc_attr($button['text'])
-            );
+        foreach ( $buttons as $button ) :
+            get_template_part( 'templates/blocks/templates/button', null, $button['button'] );
         endforeach;
         ?>
     </div>

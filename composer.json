@@ -58,6 +58,7 @@
         "wpackagist-plugin/tinymce-advanced":"5.9.2",
         "wpackagist-plugin/wordpress-seo":"21.4",
         "wpackagist-plugin/contact-form-7":"5.8",
+        "wpackagist-plugin/acf-content-analysis-for-yoast-seo":"3.1",
         "codeit-ninja/acf-extended-pro": "dev-master",
         "wordpress-premium/wordpress-seo-premium": "21.4",
         "florianmoser/bedrock-deployer": "^1.18"

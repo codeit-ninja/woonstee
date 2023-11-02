@@ -1,5 +1,6 @@
 @import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.core";
 @import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+@import "../../../node_modules/aos/src/sass/aos";
 
 @import "../assets/bootstrap5/functions";
 
@@ -37,8 +38,10 @@
 @import "popover";
 @import "footer";
 @import "offcanvas";
+@import "modal";
 
 @import "blocks/hero-image";
+@import "blocks/hero-banner";
 @import "blocks/image-text";
 @import "blocks/cta";
 @import "blocks/price-table";

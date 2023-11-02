@@ -1,8 +1,41 @@
-.has-offcanvas {
+wc-offcanvas {
+    background-color: var(--#{$prefix}offcanvas-bg);
+    color: var(--#{$prefix}offcanvas-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--#{$prefix}offcanvas-width);
+    height: 100dvh;
+    z-index: 90;
+    transform: translateX(calc(var(--#{$prefix}offcanvas-width) * 2));
+    padding: 3rem 2.5rem;
+    overflow: auto;
+    
+    .offcanvas-header {
+        margin-bottom: 2rem;
+        color: var(--#{$prefix}offcanvas-color);
+    }
+
+    &[variant=primary] {
+        --#{$prefix}offcanvas-bg: #{$primary};
+    }
+
+    &[variant=light] {
+        --#{$prefix}offcanvas-bg: #{$light};
+    }
+
+    &[variant=dark] {
+        --#{$prefix}offcanvas-bg: #{$dark};
+        --#{$prefix}offcanvas-color: #{$white};
+    }
+}
+
+.has-offcanvas .site {
     position: relative;
 
-    --#{$prefix}offcanvas-width: 40vw;
+    --#{$prefix}offcanvas-width: 50vw;
     --#{$prefix}offcanvas-bg: #{$primary};
+    --#{$prefix}offcanvas-color: #{$body-color};
     --#{$prefix}offcanvas-animation-duration: .15s;
     --#{$prefix}offcanvas-animation-delay: .15s;
     --#{$prefix}btn-bg: transparent;
@@ -25,52 +58,41 @@
         --#{$prefix}offcanvas-animation-duration: .35s;
         --#{$prefix}offcanvas-animation-delay: .35s;
     }
+
+    @include media-breakpoint-up(xxl) {
+        --#{$prefix}offcanvas-width: 600px;
+    }
 }
 
-.offcanvas-open {
+.offcanvas-open .site {
     animation: offcanvas-open-body var(--#{$prefix}offcanvas-animation-duration) forwards;
 
-    wc-offcanvas {
+    wc-offcanvas[open=true] {
+        display: block;
         animation: offcanvas-open var(--#{$prefix}offcanvas-animation-duration) forwards;
         animation-delay: var(--#{$prefix}offcanvas-animation-delay);
     }
 }
 
-.offcanvas-closed {
+.offcanvas-closed .site {
     transform: translateX(calc(var(--#{$prefix}offcanvas-width) * -1));
     animation: offcanvas-close-body var(--#{$prefix}offcanvas-animation-duration) forwards;
     animation-delay: var(--#{$prefix}offcanvas-animation-delay);
 
     wc-offcanvas {
+        display: none;
         animation: offcanvas-close var(--#{$prefix}offcanvas-animation-duration) forwards;
     }
 }
 
-wc-offcanvas {
-    background-color: var(--#{$prefix}offcanvas-bg);
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: var(--#{$prefix}offcanvas-width);
-    height: 100dvh;
-    z-index: 90;
-    transform: translateX(calc(var(--#{$prefix}offcanvas-width) * 2));
-    padding: 3rem 2.5rem;
-    
-}
-
-wc-offcanvas-header {
-    display: block;
-    margin-bottom: 2rem;
-}
-
-.offcanvas-btn-close {
+.offcanvas-close {
     display: flex;
     gap: 1rem;
     align-items: center;
     background-color: transparent;
     border: none;
     font-size: 2rem;
+    color: var(--#{$prefix}offcanvas-color);
 
     @include transition(.12s);
 
@@ -80,7 +102,6 @@ wc-offcanvas-header {
 
     span {
         font-size: 1.1rem;
-        margin-top: -3px;
     }
 }
 

@@ -1,0 +1,115 @@
+wc-modal {
+    --#{$prefix}modal-bg: #{$white};
+    --#{$prefix}modal-color: #{$body-color};
+    --#{$prefix}modal-animation-duration: .22s;
+    
+    color: var(--#{$prefix}modal-color);
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+
+    &[variant=primary] {
+        --#{$prefix}modal-bg: #{$primary};
+        background-color: shade-color($primary, 15%);
+    }
+
+    &[variant=light] {
+        --#{$prefix}modal-bg: #{$light};
+        background-color: shade-color($light, 15%);
+    }
+
+    &[variant=dark] {
+        --#{$prefix}modal-bg: #{$dark};
+        --#{$prefix}modal-color: #{$white};
+        background-color: shade-color($dark, 15%);
+    }
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--#{$prefix}modal-bg);
+    max-width: 750px;
+    max-height: 100vh;
+    margin: 0 auto;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+.modal-header,
+.modal-body {
+    padding: 2.5rem;
+}
+
+.modal-header {
+    justify-content: flex-end;
+}
+
+.modal-close {
+    color: var(--#{$prefix}modal-color);
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    gap: 1rem;
+    font-size: 2rem;
+    font-weight: 300;
+
+    i {
+        order: 1;
+    }
+
+    span {
+        font-size: $font-size-base;
+        order: 0;
+    }
+}
+
+.modal-open {
+    wc-modal {
+        display: flex;
+        visibility: visible;
+        animation: modal-open var(--#{$prefix}modal-animation-duration) forwards;
+    }
+
+    .modal-container {
+        animation: modal-open-container var(--#{$prefix}modal-animation-duration) forwards;
+    }
+}
+
+.modal-closing {
+    wc-modal {
+        animation: modal-close var(--#{$prefix}modal-animation-duration) forwards;
+    }
+
+    .modal-container {
+        animation: modal-close-container var(--#{$prefix}modal-animation-duration) forwards;
+    }
+}
+
+@keyframes modal-open {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modal-open-container {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+@keyframes modal-close {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes modal-close-container {
+    from { transform: scale(1); }
+    to { transform: scale(0); }
+}

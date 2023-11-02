@@ -129,6 +129,10 @@ function codeit_render_block($block, $index)
         return get_template_part('templates/blocks/hero', 'image', array('index' => $index, 'block' => $block));
     }
 
+    if ($block['acf_fc_layout'] === 'block_hero_banner') {
+        return get_template_part('templates/blocks/hero', 'banner', array('index' => $index, 'block' => $block));
+    }
+
     if ($block['acf_fc_layout'] === 'block_image_with_text') {
         return get_template_part('templates/blocks/image', 'text', array('index' => $index, 'block' => $block));
     }
@@ -370,17 +374,31 @@ function social_links() {
 }
 add_shortcode('social-links', 'social_links');
 
+function remove_default_post_type($args, $postType) {
+    if ($postType === 'post') {
+        $args['public']                = false;
+        $args['show_ui']               = false;
+        $args['show_in_menu']          = false;
+        $args['show_in_admin_bar']     = false;
+        $args['show_in_nav_menus']     = false;
+        $args['can_export']            = false;
+        $args['has_archive']           = false;
+        $args['exclude_from_search']   = true;
+        $args['publicly_queryable']    = false;
+        $args['show_in_rest']          = false;
+    }
+
+    return $args;
+}
+add_filter('register_post_type_args', 'remove_default_post_type', 0, 2);
+
 function team_members() {
     ob_start();
 
-    foreach( get_field('team_members', 'options') as $member ) {
-        get_template_part('loop-templates/team', 'member', $member);
-    }
+    $members = get_field( 'team_members', 'option' );
 
-    $data = ob_get_contents();
+    array_walk( $members, fn( $member ) => get_template_part('loop-templates/team', 'member', $member) );
 
-    ob_end_clean();
-
-    return sprintf('<div class="row gy-5" id="team-members">%s</div>', $data);
+    return sprintf('<div class="row" id="team-members">%s</div>', ob_get_clean());
 }
 add_shortcode('team-members', 'team_members');

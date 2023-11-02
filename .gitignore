@@ -18,6 +18,7 @@ web/.htaccess
 # Dotenv
 .env
 .env.*
+.env-remote
 !.env.example
 
 # Composer

@@ -1,53 +1,84 @@
 class WcOffcanvas extends HTMLElement {
     static observedAttributes = ['open'];
-
-    #shadow;
-
-    constructor() {
-        super();
-    }
     
     connectedCallback() {
-        document.addEventListener('DOMContentLoaded', this.onMount.bind(this));
-        document.body.classList.add('has-offcanvas')
+        document.addEventListener('DOMContentLoaded', this.onMount.bind(this))
+        document.documentElement.classList.add('has-offcanvas')
+        
+        this.createHeaderElement()
     }
 
     onMount() {
-        const closeBtn = this.querySelector('.offcanvas-btn-close')
+        const closeBtn = this.querySelector('.offcanvas-close')
 
         closeBtn?.addEventListener('click', () => this.setAttribute('open', 'false'))
     }
 
-    close() {
-        document.body.classList.remove('offcanvas-open')
-        document.body.classList.add('offcanvas-closed')
+    createHeaderElement() {
+        const headerEl = document.createElement('div')
+        
+        headerEl.classList.add('offcanvas-header')
+        headerEl.innerHTML = `
+            <button class="offcanvas-close">
+                <i class="fa-thin fa-arrow-left-long"></i>
+                <span>sluiten</span>
+            </button>
+        `
 
+        this.prepend(headerEl)
+    }
+
+    close() {
+        document.documentElement.classList.remove('offcanvas-open')
+        document.documentElement.classList.add('offcanvas-closed')
+
+        const active = document.querySelector('.member.active')
         const delay = getComputedStyle(this).getPropertyValue('--codeit-offcanvas-animation-delay')
 
+        if( active ) {
+            active.classList.remove('active')
+        }
+
         setTimeout(() => {
-            document.body.classList.remove('offcanvas-closed')
+            document.documentElement.classList.remove('offcanvas-closed')
             this.fixStickyLikeElements(true)
-            document.body.style.removeProperty('overflow')
+            document.documentElement.style.removeProperty('overflow')
         }, parseFloat(delay) * 2000)
     }
 
     open() {
+        let openOffCanvasElements = document.querySelectorAll('wc-offcanvas[open=true]')
+        openOffCanvasElements = [...openOffCanvasElements].filter(el => el !== this)
+
+        // Close previously opened offcanvas elements
+        if( openOffCanvasElements.length > 0 ) {
+            openOffCanvasElements.forEach(el => el.setAttribute('open', 'false'))
+        }
+
         // Position fixed wont work using css
         // Keep position at top of window using JS
         ['load', 'scroll'].forEach(event => window.addEventListener(event, () => this.style.top = `${window.scrollY}px`))
 
         this.style.top = `${window.scrollY}px`
 
-        document.body.classList.remove('offcanvas-closed')
-        document.body.classList.add('offcanvas-open')
+        document.documentElement.classList.remove('offcanvas-closed')
+        document.documentElement.classList.add('offcanvas-open')
 
         if( 'hidden' === this.getAttribute('body') ) {
-            document.body.style.overflow = 'hidden'
+            document.documentElement.style.overflow = 'hidden'
         }
         
         this.fixStickyLikeElements()
     }
 
+    /**
+     * Fix sticky elements
+     * 
+     * Sticky elemets lose their stickyness when a transform is
+     * set on its parent.
+     * 
+     * @param {*} reset 
+     */
     fixStickyLikeElements(reset = false) {
         const fixedTop = document.getElementsByClassName('fixed-top');
 

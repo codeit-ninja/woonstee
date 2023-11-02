@@ -142,6 +142,13 @@
             --#{$prefix}btn-active-color: #{$light};
         }
 
+        &-white {
+            --#{$prefix}btn-bg: #{$white};
+            --#{$prefix}btn-color: #{$white};
+            --#{$prefix}btn-hover-color: #{$white};
+            --#{$prefix}btn-active-color: #{$white};
+        }
+
         &-dark {
             --#{$prefix}btn-bg: #{$dark};
             --#{$prefix}btn-color: #{$dark};

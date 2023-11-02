@@ -1,13 +1,5 @@
-.admin-bar {
-    #single-project,
-    #page-wrapper {
-        margin-top: 75px;
-    }
-}
-
 #single-project,
 #error-404-wrapper {
-    margin-top: 78px;
     flex-grow: 1;
 }
 
@@ -18,5 +10,7 @@
 .site {
     display: flex;
     flex-direction: column;
+    min-height: calc(100vh - 78px);
+    padding-top: 78px;
     min-height: 100vh;
 }
