@@ -1,6 +1,12 @@
 .block-hero-banner {
+    background-image: url(http://dewoonsteetiel.wordpress.test/app/uploads/2023/11/De-Woonstee-Project-Bilthoven-16.jpg);
     background-color: var(--#{$prefix}banner-bg);
-    padding: 5rem 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 3rem 0 0;
+    height: 850px;
+    justify-content: flex-end;
     //background-color: tint-color($primary, 20%);
 
     &-heading {
@@ -9,14 +15,13 @@
         line-height: 1;
         white-space: nowrap;
 
-        @include font-size(3rem);
+        @include font-size(2.4rem);
     }
 
-    &-text {
-        @include font-size(1.4rem);
+    &-content {
+        padding: 2rem;
     }
 }
-
 
 @include media-breakpoint-down(lg) {
     .block-hero-banner {
