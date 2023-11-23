@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .glide {
   position: relative;
   width: 100%;
@@ -2049,10 +2050,10 @@ wc-modal[variant=dark] {
 }
 
 .block-hero-banner {
-  background-image: url(http://dewoonsteetiel.wordpress.test/app/uploads/2023/11/De-Woonstee-Project-Bilthoven-16.jpg);
+  background-image: url(https://dewoonsteetiel.wordpress.test/app/uploads/2023/11/©studioPSG.be-19606-scaled.jpg);
   background-color: var(--codeit-banner-bg);
   background-size: cover;
-  background-position: center;
+  background-position: left;
   background-attachment: fixed;
   padding: 3rem 0 0;
   height: 850px;

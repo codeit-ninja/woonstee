@@ -4,9 +4,8 @@
     <option name="directories">
       <list>
         <option value="$PROJECT_DIR$/web/wp/wp-includes/sodium_compat/tests" />
-        <option value="$PROJECT_DIR$/web/wp/wp-includes/sodium_compat/tests" />
-        <option value="$PROJECT_DIR$/web/wp/wp-includes/sodium_compat/tests" />
-        <option value="$PROJECT_DIR$/web/wp/wp-includes/sodium_compat/tests" />
+        <option value="$PROJECT_DIR$/web/app/plugins/acf-extended-pro/pro/includes/libraries/stripe/tests" />
+        <option value="$PROJECT_DIR$/web/app/plugins/plugin-acf-extended-pro/pro/includes/libraries/stripe/tests" />
       </list>
     </option>
   </component>

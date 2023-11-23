@@ -361,8 +361,7 @@ function deregister_styles(){
 add_filter('wpcf7_autop_or_not', '__return_false');
 
 function social_links() {
-    $html = '';
-    $html .= '<div class="d-flex gap-3">';
+    $html = '<div class="d-flex gap-3">';
 
     foreach( get_field('social_links', 'option') as $social ) {
         $html .= '<a href="'. $social['link'] .'">'. $social['icon'] .'</a>';

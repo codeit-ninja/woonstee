@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e432a0b36e609d791dc6aa4bb4d6ab2d",
+    "content-hash": "b0f05bb3d8c2b1b78b496af88bf51446",
     "packages": [
         {
             "name": "brick/math",
@@ -263,49 +263,6 @@
             "time": "2022-08-20T06:45:11+00:00"
         },
         {
-            "name": "deployer/deployer",
-            "version": "v7.3.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/deployphp/deployer.git",
-                "reference": "3535bdb2f6360662bd95f6e26fce31dbc269af64"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/deployphp/deployer/zipball/3535bdb2f6360662bd95f6e26fce31dbc269af64",
-                "reference": "3535bdb2f6360662bd95f6e26fce31dbc269af64",
-                "shasum": ""
-            },
-            "bin": [
-                "dep"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anton Medvedev",
-                    "email": "anton@medv.io"
-                }
-            ],
-            "description": "Deployment Tool",
-            "homepage": "https://deployer.org",
-            "support": {
-                "docs": "https://deployer.org/docs",
-                "issues": "https://github.com/deployphp/deployer/issues",
-                "source": "https://github.com/deployphp/deployer"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/antonmedv",
-                    "type": "github"
-                }
-            ],
-            "time": "2023-11-07T10:27:12+00:00"
-        },
-        {
             "name": "doctrine/inflector",
             "version": "2.0.8",
             "source": {
@@ -395,42 +352,6 @@
                 }
             ],
             "time": "2023-06-16T13:40:37+00:00"
-        },
-        {
-            "name": "florianmoser/bedrock-deployer",
-            "version": "1.18.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FlorianMoser/bedrock-deployer.git",
-                "reference": "06df63cdc329b4aa5cd78716821d22de6089541a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FlorianMoser/bedrock-deployer/zipball/06df63cdc329b4aa5cd78716821d22de6089541a",
-                "reference": "06df63cdc329b4aa5cd78716821d22de6089541a",
-                "shasum": ""
-            },
-            "require": {
-                "deployer/deployer": ">=6.0",
-                "vlucas/phpdotenv": "^5.3"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Florian Moser",
-                    "email": "info@novalab.ch"
-                }
-            ],
-            "description": "Deployer recipes for Roots Bedrock",
-            "support": {
-                "issues": "https://github.com/FlorianMoser/bedrock-deployer/issues",
-                "source": "https://github.com/FlorianMoser/bedrock-deployer/tree/1.18.2"
-            },
-            "time": "2022-06-29T15:27:34+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -2683,16 +2604,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "4.7.4",
+            "version": "4.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "60a4c63ab724854332900504274f6150ff26d286"
+                "reference": "5f0df49ae5ad6efb7afa69e6bfab4e5b1e080d8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/60a4c63ab724854332900504274f6150ff26d286",
-                "reference": "60a4c63ab724854332900504274f6150ff26d286",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/5f0df49ae5ad6efb7afa69e6bfab4e5b1e080d8e",
+                "reference": "5f0df49ae5ad6efb7afa69e6bfab4e5b1e080d8e",
                 "shasum": ""
             },
             "require": {
@@ -2759,7 +2680,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ramsey/uuid/issues",
-                "source": "https://github.com/ramsey/uuid/tree/4.7.4"
+                "source": "https://github.com/ramsey/uuid/tree/4.7.5"
             },
             "funding": [
                 {
@@ -2771,7 +2692,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-15T23:01:58+00:00"
+            "time": "2023-11-08T05:53:05+00:00"
         },
         {
             "name": "roots/acorn",
@@ -3055,7 +2976,7 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.2.1",
+            "version": "6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
@@ -3086,7 +3007,7 @@
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress/issues",
-                "source": "https://github.com/roots/wordpress/tree/6.2.1"
+                "source": "https://github.com/roots/wordpress/tree/6.4"
             },
             "funding": [
                 {
@@ -3169,22 +3090,22 @@
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.2.1",
+            "version": "6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.2.1"
+                "reference": "6.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.2.1-no-content.zip",
-                "shasum": "9a911295a2572239dd1de02d6b537588a3666536"
+                "url": "https://downloads.wordpress.org/release/wordpress-6.4-no-content.zip",
+                "shasum": "913f2f8cb4a2b73c1b9912e690b074324871e00f"
             },
             "require": {
-                "php": ">= 5.6.20"
+                "php": ">= 7.0.0"
             },
             "provide": {
-                "wordpress/core-implementation": "6.2.1"
+                "wordpress/core-implementation": "6.4"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -3235,7 +3156,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2023-05-16T16:51:43+00:00"
+            "time": "2023-11-07T19:31:52+00:00"
         },
         {
             "name": "roots/wp-config",
@@ -5569,24 +5490,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
-        },
-        {
-            "name": "wpackagist-theme/twentytwentythree",
-            "version": "1.2",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentytwentythree/",
-                "reference": "1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentythree.1.2.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentytwentythree/"
         }
     ],
     "packages-dev": [
@@ -5596,12 +5499,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "acf687d343a847d98f175a9ce4e16483848246fd"
+                "reference": "ee26754ea3d0eb27e1336f39401d2056032035db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/acf687d343a847d98f175a9ce4e16483848246fd",
-                "reference": "acf687d343a847d98f175a9ce4e16483848246fd",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/ee26754ea3d0eb27e1336f39401d2056032035db",
+                "reference": "ee26754ea3d0eb27e1336f39401d2056032035db",
                 "shasum": ""
             },
             "conflict": {
@@ -5762,6 +5665,7 @@
                 "flarum/mentions": "<1.6.3",
                 "flarum/sticky": ">=0.1.0.0-beta14,<=0.1.0.0-beta15",
                 "flarum/tags": "<=0.1.0.0-beta13",
+                "floriangaerber/magnesium": "<0.3.1",
                 "fluidtypo3/vhs": "<5.1.1",
                 "fof/byobu": ">=0.3.0.0-beta2,<1.1.7",
                 "fof/upload": "<1.2.3",
@@ -6277,7 +6181,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-06T17:04:05+00:00"
+            "time": "2023-11-08T15:04:20+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
