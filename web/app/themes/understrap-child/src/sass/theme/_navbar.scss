@@ -1,16 +1,17 @@
 .navbar {
-    background-color: $dark;
-    border-bottom: 1px solid $dark;
+    background-color: $white;
+    border-bottom: 1px solid $white;
 
-    --#{$prefix}navbar-color: #{$white};
-    --#{$prefix}navbar-hover-color: #{$white};
-    --#{$prefix}navbar-brand-color: #{$white};
-    --#{$prefix}navbar-brand-hover-color: #{$white};
+    --#{$prefix}navbar-color: #{$dark};
+    --#{$prefix}navbar-hover-color: #{$dark};
+    --#{$prefix}navbar-brand-color: #{$dark};
+    --#{$prefix}navbar-brand-hover-color: #{$dark};
+    --#{$prefix}navbar-brand-padding-y: 1.5rem;
 
     &-brand {
         font-family: $headings-font-family;
         text-transform: uppercase;
-        font-weight: 300;
+        font-weight: 400;
 
         img {
             width: 240px;

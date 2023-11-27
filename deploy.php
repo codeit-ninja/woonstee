@@ -14,9 +14,8 @@ add('writable_dirs', ['web/app/uploads']);
 // Hosts
 
 host('192.168.2.2')
-    ->set('remote_user', 'codeit')
-    ->set('deploy_path', '/srv/sites/dewoonsteetiel');
+    ->set('remote_user', 'codeit-dewoonsteetiel')
+    ->set('deploy_path', '/home/codeit-dewoonsteetiel/htdocs');
 
 // Hooks
-
-// after('deploy:failed', 'deploy:unlock');
+after('deploy:failed', 'deploy:unlock');

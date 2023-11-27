@@ -1,13 +1,37 @@
 .block-hero-banner {
-    background-image: url(https://dewoonsteetiel.wordpress.test/app/uploads/2023/11/©studioPSG.be-19606-scaled.jpg);
     background-color: var(--#{$prefix}banner-bg);
-    background-size: cover;
-    background-position: left;
-    background-attachment: fixed;
-    padding: 3rem 0 0;
-    height: 850px;
     justify-content: flex-end;
     //background-color: tint-color($primary, 20%);
+
+    &-horizontal-text {
+        text-orientation: sideways;
+        writing-mode: vertical-rl;
+        font-weight: 500;
+        font-size: .9rem;
+        color: $gray-600;
+        transform: rotate(180deg);
+        align-self: center;
+        width: 20%;
+    }
+
+    &-header {
+        position: relative;
+        right: -150px;
+    }
+
+    &-leading {
+        font-family: $headings-font-family;
+        font-size: 4.5rem;
+        font-weight: 600;
+        text-wrap: nowrap;
+        line-height: 1;
+    }
+
+    &-text {
+        font-weight: 400;
+        color: $gray-400;
+        margin: 1.5rem 0;
+    }
 
     &-heading {
         font-family: $headings-font-family;
