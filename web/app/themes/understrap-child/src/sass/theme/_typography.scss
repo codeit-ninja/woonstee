@@ -28,7 +28,14 @@ h6 {
 
 blockquote {
     font-family: $headings-font-family;
-    font-weight: 200;
+    font-weight: 500;
+    max-width: 950px;
+    margin: 0 auto;
+    line-height: 1;
+
+    .lead {
+        font-weight: 500;
+    }
 }
 
 .fab,
