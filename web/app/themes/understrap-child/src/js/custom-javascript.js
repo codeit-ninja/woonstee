@@ -86,8 +86,23 @@ document.addEventListener('DOMContentLoaded', () => {
     [...openComponentsElements]?.forEach(element => element.addEventListener('click', () => {
         /** @type {HTMLElement} */
         const target = document.querySelector(element.dataset.offcanvasOpen ?? element.dataset.modalOpen);
-        console.log(target)
-        element?.classList.toggle('active');
-        target?.setAttribute('open', 'true');
+        
+        if( ! target ) {
+            return;
+        }
+
+        if( element.classList.contains('active') ) {
+            element.classList.remove('active', 'is-active');
+            target.setAttribute('open', 'false');
+
+            return;
+        }
+
+        if( element.classList.contains('hamburger') ) {
+            element.classList.add('is-active');
+        }
+
+        element.classList.add('active');
+        target.setAttribute('open', 'true');
     }));
 })

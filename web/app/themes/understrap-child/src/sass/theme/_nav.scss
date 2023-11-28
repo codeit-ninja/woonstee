@@ -1,26 +1,22 @@
-.navbar {
-    .nav {
-        &-item {
-            position: relative;
-            overflow: hidden;
+.nav {
+    &-item {
+        position: relative;
+        overflow: hidden;
 
-            @include line-slide-in-animation( -100%, 0% );
-            @include line-hover('link', 100%, 39%, $dark);
+        @include line-slide-in-animation( -100%, 0% );
+        @include line-hover('link', 100%, 39%, var(--#{$prefix}nav-link-active-color));
 
-            &.active,
-            &:hover {
-                .nav-link {
-                    color: $dark;
-                }
+        &.active {
+            .nav-link {
+                color: var(--#{$prefix}nav-link-active-color);
             }
         }
+    }
 
-        &-link {
-            text-transform: uppercase;
-            font-size: 1rem;
-            color: $gray-600;
+    &-link {
+        text-transform: uppercase;
+        font-weight: 400;
 
-            @include transition(.12s);
-        }
+        @include transition(.12s);
     }
 }

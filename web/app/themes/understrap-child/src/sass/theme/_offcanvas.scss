@@ -18,6 +18,12 @@ wc-offcanvas {
 
     &[variant=primary] {
         --#{$prefix}offcanvas-bg: #{$primary};
+
+        .nav {
+            --#{$prefix}nav-link-color: #{$gray-600};
+            --#{$prefix}nav-link-hover-color: #{$dark};
+            --#{$prefix}nav-link-active-color: #{$dark};
+        }
     }
 
     &[variant=light] {
@@ -27,6 +33,12 @@ wc-offcanvas {
     &[variant=dark] {
         --#{$prefix}offcanvas-bg: #{$dark};
         --#{$prefix}offcanvas-color: #{$white};
+
+        .nav {
+            --#{$prefix}nav-link-color: #{$gray-600};
+            --#{$prefix}nav-link-hover-color: #{$white};
+            --#{$prefix}nav-link-active-color: #{$white};
+        }
     }
 }
 

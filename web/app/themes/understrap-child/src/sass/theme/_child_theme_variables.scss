@@ -1,4 +1,5 @@
 $prefix: 'codeit-';
+$enable-cssgrid: true;
 
 $grays: (
     "100": tint-color(#1F292E, 87),
@@ -131,3 +132,7 @@ $popover-body-padding-x:            $spacer;
 
 $popover-arrow-width:               1rem;
 $popover-arrow-height:              .5rem;
+
+$hamburger-layer-color: #fff;
+$hamburger-layer-height: 2px;
+$hamburger-layer-spacing: 8px;

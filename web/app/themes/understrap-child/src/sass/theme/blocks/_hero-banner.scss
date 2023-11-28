@@ -3,6 +3,12 @@
     justify-content: flex-end;
     //background-color: tint-color($primary, 20%);
 
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        align-items: center;
+    }
+
     &-horizontal-text {
         text-orientation: sideways;
         writing-mode: vertical-rl;
@@ -16,15 +22,17 @@
 
     &-header {
         position: relative;
-        right: -150px;
+        right: -120px;
+        z-index: 5;
     }
 
     &-leading {
         font-family: $headings-font-family;
-        font-size: 4.5rem;
+        font-size: clamp(3rem, 4vw, 4.5rem);
         font-weight: 600;
         text-wrap: nowrap;
         line-height: 1;
+        margin-top: 50px;
     }
 
     &-text {
@@ -49,8 +57,34 @@
 
 @include media-breakpoint-down(lg) {
     .block-hero-banner {
-        &-heading {
-            white-space: normal;
+        &-grid {
+            grid-template-columns: 30% auto;
+        }
+
+        &-header {
+            position: relative;
+            right: -50px;
+            z-index: 5;
+        }
+
+        &-image-container {
+            position: relative;
+            height: 100%;
+    
+            img {
+                object-fit: cover;
+                object-position: left;
+                position: absolute;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .block-hero-banner {
+        &-grid {
+            grid-template-columns: 60% auto;
         }
     }
 }

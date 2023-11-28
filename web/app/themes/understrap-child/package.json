@@ -77,6 +77,7 @@
     "dependencies": {
         "@glidejs/glide": "^3.6.0",
         "aos": "^3.0.0-beta.6",
+        "hamburgers": "^1.2.1",
         "masonry-layout": "^4.2.2",
         "tiny-slider": "^2.9.4"
     }

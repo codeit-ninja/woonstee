@@ -32,12 +32,12 @@ class WcOffcanvas extends HTMLElement {
         document.documentElement.classList.remove('offcanvas-open')
         document.documentElement.classList.add('offcanvas-closed')
 
-        const active = document.querySelector('.member.active')
-        const delay = getComputedStyle(this).getPropertyValue('--codeit-offcanvas-animation-delay')
-
-        if( active ) {
-            active.classList.remove('active')
-        }
+        const activeElements = document.querySelectorAll('[data-offcanvas-open].active')
+        const delay = getComputedStyle(this).getPropertyValue('--codeit-offcanvas-animation-delay');
+        
+        [...activeElements].forEach(activeEl => {
+            activeEl.classList.remove('active', 'is-active');
+        })
 
         setTimeout(() => {
             document.documentElement.classList.remove('offcanvas-closed')
@@ -77,7 +77,7 @@ class WcOffcanvas extends HTMLElement {
      * Sticky elemets lose their stickyness when a transform is
      * set on its parent.
      * 
-     * @param {*} reset 
+     * @param {boolean} reset 
      */
     fixStickyLikeElements(reset = false) {
         const fixedTop = document.getElementsByClassName('fixed-top');

@@ -15639,11 +15639,11 @@
 	  close() {
 	    document.documentElement.classList.remove('offcanvas-open');
 	    document.documentElement.classList.add('offcanvas-closed');
-	    const active = document.querySelector('.member.active');
+	    const activeElements = document.querySelectorAll('[data-offcanvas-open].active');
 	    const delay = getComputedStyle(this).getPropertyValue('--codeit-offcanvas-animation-delay');
-	    if (active) {
-	      active.classList.remove('active');
-	    }
+	    [...activeElements].forEach(activeEl => {
+	      activeEl.classList.remove('active', 'is-active');
+	    });
 	    setTimeout(() => {
 	      document.documentElement.classList.remove('offcanvas-closed');
 	      this.fixStickyLikeElements(true);
@@ -15677,7 +15677,7 @@
 	   * Sticky elemets lose their stickyness when a transform is
 	   * set on its parent.
 	   * 
-	   * @param {*} reset 
+	   * @param {boolean} reset 
 	   */
 	  fixStickyLikeElements(reset = false) {
 	    const fixedTop = document.getElementsByClassName('fixed-top');
@@ -15821,9 +15821,19 @@
 	  [...openComponentsElements]?.forEach(element => element.addEventListener('click', () => {
 	    /** @type {HTMLElement} */
 	    const target = document.querySelector(element.dataset.offcanvasOpen ?? element.dataset.modalOpen);
-	    console.log(target);
-	    element?.classList.toggle('active');
-	    target?.setAttribute('open', 'true');
+	    if (!target) {
+	      return;
+	    }
+	    if (element.classList.contains('active')) {
+	      element.classList.remove('active', 'is-active');
+	      target.setAttribute('open', 'false');
+	      return;
+	    }
+	    if (element.classList.contains('hamburger')) {
+	      element.classList.add('is-active');
+	    }
+	    element.classList.add('active');
+	    target.setAttribute('open', 'true');
 	  }));
 	});
 

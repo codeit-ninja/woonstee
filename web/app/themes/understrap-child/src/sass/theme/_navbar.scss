@@ -1,17 +1,16 @@
 .navbar {
-    background-color: $white;
-    border-bottom: 1px solid $white;
+    background-color: $dark;
 
-    --#{$prefix}navbar-color: #{$dark};
-    --#{$prefix}navbar-hover-color: #{$dark};
-    --#{$prefix}navbar-brand-color: #{$dark};
-    --#{$prefix}navbar-brand-hover-color: #{$dark};
+    --#{$prefix}navbar-color: #{$white};
+    --#{$prefix}navbar-hover-color: #{$white};
+    --#{$prefix}navbar-brand-color: #{$white};
+    --#{$prefix}navbar-brand-hover-color: #{$white};
     --#{$prefix}navbar-brand-padding-y: 1.5rem;
 
     &-brand {
         font-family: $headings-font-family;
         text-transform: uppercase;
-        font-weight: 400;
+        font-weight: 600;
 
         img {
             width: 240px;
@@ -23,6 +22,28 @@
     &-nav {
         justify-content: space-between;
         flex-grow: 1;
+    }
+}
+
+#offcanvas-navbar {
+    display: flex;
+    flex-direction: column;
+
+    .nav-social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 150px;
+        margin-bottom: 2rem;
+        gap: 2rem;
+        color: shade-color($primary, 25%);
+
+        .fab,
+        .fa-brands {
+            color: shade-color($primary, 25%);
+            border-color: shade-color($primary, 25%);
+        }
     }
 }
 

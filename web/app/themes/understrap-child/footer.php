@@ -33,7 +33,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </div><!-- #wrapper-footer -->
 
+<!-- offvancas elements -->
 <?php do_action( 'insert_before_body_end' ); ?>
+
 </div><!-- #page -->
 
 <?php
