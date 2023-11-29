@@ -5,13 +5,13 @@
     --#{$prefix}navbar-hover-color: #{$white};
     --#{$prefix}navbar-brand-color: #{$white};
     --#{$prefix}navbar-brand-hover-color: #{$white};
-    --#{$prefix}navbar-brand-padding-y: 1.5rem;
+    --#{$prefix}navbar-brand-padding-y: 1rem;
     --#{$prefix}navbar-brand-margin-end: 0;
 
     &-brand {
         font-family: $headings-font-family;
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: 300;
 
         img {
             width: 240px;
@@ -40,13 +40,12 @@
         margin-top: 150px;
         margin-bottom: 2rem;
         gap: 2rem;
-        color: shade-color($primary, 30%);
+    }
 
-        .fab,
-        .fa-brands {
-            color: shade-color($primary, 30%);
-            border-color: shade-color($primary, 30%);
-        }
+    .nav-brand {
+        margin: auto 0 3rem;
+        display: block;
+        text-align: center;
     }
 }
 

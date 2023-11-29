@@ -67,6 +67,7 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 function add_child_theme_textdomain()
 {
     load_child_theme_textdomain('understrap-child', get_stylesheet_directory() . '/languages');
+    add_image_size('thumbnail-medium', 480, 480, true);
 }
 add_action('after_setup_theme', 'add_child_theme_textdomain');
 
@@ -372,6 +373,17 @@ function social_links() {
     return $html;
 }
 add_shortcode('social-links', 'social_links');
+
+function get_social_link_by_type( string $t ) {
+    $types = get_field('social_links', 'option');
+    $social = current( array_filter( $types, fn( $type ) => str_contains( $type['link'], $t ) ) );
+
+    if( $social ) {
+        return $social['link'];
+    }
+
+    return false; 
+}
 
 function remove_default_post_type($args, $postType) {
     if ($postType === 'post') {

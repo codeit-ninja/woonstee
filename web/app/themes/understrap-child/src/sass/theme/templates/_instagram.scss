@@ -1,0 +1,19 @@
+#instagram-posts {
+    .fab,
+    .fa-brands {
+        border: none;
+        width: initial;
+        height: initial;
+    }
+
+    .hashtag {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+
+    a {
+        font-weight: 500;
+        font-size: .9rem;
+        color: $gray-600;
+    }
+}

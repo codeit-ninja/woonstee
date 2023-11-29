@@ -19,4 +19,22 @@
 
         @include transition(.12s);
     }
+
+    &-brand {
+        font-size: 2.4rem;
+    }
+
+    &-social {
+        color: shade-color($primary, 30%);
+
+        .fab,
+        .fa-brands {
+            color: shade-color($primary, 30%);
+            border-color: shade-color($primary, 30%);
+        }
+    }
+
+    &-brand {
+        color: shade-color($primary, 10%);
+    }
 }

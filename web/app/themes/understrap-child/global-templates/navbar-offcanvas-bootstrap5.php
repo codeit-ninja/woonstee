@@ -24,7 +24,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<!-- Your site branding in the menu -->
 		<?php get_template_part( 'global-templates/navbar-branding' ); ?>
 
-        <button class="hamburger hamburger--collapse" type="button" data-offcanvas-open="#offcanvas-navbar">
+        <button class="hamburger hamburger--squeeze" type="button" data-offcanvas-open="#offcanvas-navbar">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>

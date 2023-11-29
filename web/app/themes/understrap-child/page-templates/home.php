@@ -24,8 +24,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php get_template_part('loop-templates/blocks/block', 'editor'); ?>
 
                     <!-- Render project slider -->
-					<div class="container" id="block-green">
+					<!-- <div class="container" id="block-green">
                         <?php get_template_part('loop-templates/slider/projects', 'slider'); ?>
+                    </div> -->
+
+                    <div class="mb-5">
+                        <?php get_template_part('templates/instagram', 'posts'); ?>
                     </div>
 
 				</main>
