@@ -17,3 +17,15 @@
         color: $gray-600;
     }
 }
+
+wc-instagram {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: .5rem;
+}
+
+@include media-breakpoint-down(md) {
+    wc-instagram {
+        grid-template-columns: 1fr 1fr;
+    }
+}

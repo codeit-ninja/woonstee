@@ -8,7 +8,54 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
+/**
+ * UnderStrap functions and definitions
+ *
+ * @package Understrap
+ */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+// UnderStrap's includes directory.
+$understrap_inc_dir = 'inc';
+
+// Array of files to include.
+$understrap_includes = array(
+	'/theme-settings.php',                  // Initialize theme default settings.
+	'/setup.php',                           // Theme setup and custom theme supports.
+	'/widgets.php',                         // Register widget area.
+	'/enqueue.php',                         // Enqueue scripts and styles.
+	'/template-tags.php',                   // Custom template tags for this theme.
+	'/pagination.php',                      // Custom pagination for this theme.
+	'/hooks.php',                           // Custom hooks.
+	'/extras.php',                          // Custom functions that act independently of the theme templates.
+	'/customizer.php',                      // Customizer additions.
+	'/custom-comments.php',                 // Custom Comments file.
+	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker. Trying to get deeper navigation? Check out: https://github.com/understrap/understrap/issues/567.
+	'/editor.php',                          // Load Editor functions.
+	'/block-editor.php',                    // Load Block Editor functions.
+	'/deprecated.php',                      // Load deprecated functions.
+    '/instagram.php'
+);
+
+// Load WooCommerce functions if WooCommerce is activated.
+if ( class_exists( 'WooCommerce' ) ) {
+	$understrap_includes[] = '/woocommerce.php';
+}
+
+// Load Jetpack compatibility file if Jetpack is activiated.
+if ( class_exists( 'Jetpack' ) ) {
+	$understrap_includes[] = '/jetpack.php';
+}
+
+// Include files.
+foreach ( $understrap_includes as $file ) {
+	require_once get_theme_file_path( $understrap_inc_dir . $file );
+}
+
+// Register rest route for Instagram integration
+add_action( 'rest_api_init', array( WP_Instagram::class, 'register_rest_route' ) );
 
 /**
  * Removes the parent themes stylesheet and scripts from inc/enqueue.php
@@ -166,27 +213,6 @@ function breadcrumbs()
     }
 }
 
-function facebook_social_button()
-{
-    $article_url = get_article_url(); // Psuedo-code method to retrieve the article's URL.
-    $article_url .= '#utm_source=facebook&utm_medium=social&utm_campaign=social_buttons';
-    $title = html_entity_decode(get_og_title()); // Psuedo-code method to retrieve the og_title.
-    $description = html_entity_decode(get_og_description()); // Psuedo-code method to retrieve the og_description.
-    $og_image = get_og_image(); // Psuedo-code method to retrieve the og_image assigned to a post.
-    $images = $og_image->get_images();
-    $url = 'http://www.facebook.com/sharer/sharer.php?s=100';
-    $url .= '&p[url]=' . urlencode($article_url);
-    $url .= '&p[title]=' . urlencode($title);
-    $url .= '&p[images][0]=' . urlencode($images[0]);
-    $url .= '&p[summary]=' . urlencode($description);
-    $url .= '&u=' . urlencode($article_url);
-    $url .= '&t=' . urlencode($title);
-
-    echo esc_attr($url);
-}
-
-add_shortcode('social-share-buttons', 'social_share_buttons');
-
 // Allow SVG
 add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mimes) {
     global $wp_version;
@@ -205,12 +231,12 @@ add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mime
 
 }, 10, 4);
 
-function cc_mime_types($mimes)
+function add_mime_types($mimes)
 {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
-add_filter('upload_mimes', 'cc_mime_types');
+add_filter('upload_mimes', 'add_mime_types');
 
 function fix_svg()
 {

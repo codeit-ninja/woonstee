@@ -4,6 +4,7 @@ import AOS from 'aos';
 
 import './components/offcanvas';
 import './components/modal';
+import './components/instagram';
 
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
