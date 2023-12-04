@@ -4,7 +4,6 @@ use GuzzleHttp\Exception\GuzzleException;
 use Instagram\Api;
 use Instagram\Exception\InstagramAuthException;
 use Instagram\Exception\InstagramException;
-use Instagram\Model\Media;
 use Instagram\Model\Profile;
 use Instagram\Utils\MediaDownloadHelper;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
@@ -48,17 +47,20 @@ class WP_Instagram
     {
         register_rest_route( 'api/v1', '/instagram/profile', array( 
             'methods' => 'GET', 
-            'callback' => array( static::class, 'fetch_profile' ) 
+            'callback' => array( static::class, 'fetch_profile' ),
+            'permission_callback' => '__return_true',
         ) );
 
         register_rest_route( 'api/v1', '/instagram/posts', array(
             'methods' => 'GET',
-            'callback' => array( static::class, 'get_latest_posts' )
+            'callback' => array( static::class, 'get_latest_posts' ),
+            'permission_callback' => '__return_true',
         ) );
 
         register_rest_route( 'api/v1', '/instagram/import', array(
             'methods' => 'GET',
-            'callback' => array( static::class, 'import_latest_posts' )
+            'callback' => array( static::class, 'import_latest_posts' ),
+            'permission_callback' => '__return_true',
         ) );
     }
 
