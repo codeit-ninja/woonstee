@@ -29,12 +29,7 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'offcanvas' );
 <div class="site" id="page">
 
 	<header id="site-header">
-
-		<a class="skip-link <?php echo understrap_get_screen_reader_class( true ); ?>" href="#content">
-			<?php esc_html_e( 'Skip to content', 'understrap' ); ?>
-		</a>
         
-        <?php get_template_part( 'global-templates/header/top', 'bar' ); ?>
 		<?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?>
 
 	</header>

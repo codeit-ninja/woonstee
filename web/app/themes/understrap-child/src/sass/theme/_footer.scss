@@ -1,6 +1,7 @@
 #wrapper-footer-full {
     background-color: $dark;
-    padding: 4rem 0;
+    padding: 4rem 0 2rem;
+    color: $white;
 
     .footer-widget {
         color: $white;
@@ -44,6 +45,11 @@
         text-decoration: none;
         border-bottom: 1px dashed tint-color($dark, 50%);
     }
+}
+
+#footer-guarantees {
+    margin-top: 2rem;
+    color: $gray-600;
 }
 
 .footer-widget {

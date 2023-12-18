@@ -24,17 +24,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<!-- Your site branding in the menu -->
 		<?php get_template_part( 'global-templates/navbar-branding' ); ?>
 
+        <div class="quik-contact-links ms-auto me-5">
+            <div class="d-flex align-items-center gap-3">
+                <i class="fa-thin fa-phone"></i>
+                <a href="tel:+31 0344 621 608">Contact opnemen</a>
+            </div>
+        </div>
+
         <button class="wc-hamburger" type="button" data-offcanvas-open="#offcanvas-navbar">
             <span></span>
             <span></span>
             <span></span>
         </button>
-
-        <!-- <button class="hamburger hamburger--squeeze" type="button" data-offcanvas-open="#offcanvas-navbar">
-            <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-            </span>
-        </button> -->
 
         <?php
         add_action(
