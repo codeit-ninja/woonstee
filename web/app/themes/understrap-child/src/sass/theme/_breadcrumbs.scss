@@ -1,9 +1,10 @@
-#breadcrumbs {
+.rank-math-breadcrumb {
+    position: relative;
     padding: 2rem 0;
+    z-index: 4;
 
-    > span {
-        display: flex;
-        gap: .35rem;
+    p {
+        margin-bottom: 0;
     }
 
     span {
@@ -11,11 +12,17 @@
         font-size: 1rem;
     }
 
+    .separator {
+        display: inline-block;
+        width: 25px;
+        text-align: center;
+    }
+
     a {
         color: $dark;
     }
 
-    .breadcrumb_last {
+    .last {
         color: $text-muted;
     }
 }

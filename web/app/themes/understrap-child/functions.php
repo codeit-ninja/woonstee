@@ -208,9 +208,7 @@ function codeit_render_block($block, $index)
 
 function breadcrumbs()
 {
-    if (function_exists('yoast_breadcrumb')) {
-        yoast_breadcrumb('<div id="breadcrumbs">', '</div>');
-    }
+    if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs();
 }
 
 add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mimes) {
