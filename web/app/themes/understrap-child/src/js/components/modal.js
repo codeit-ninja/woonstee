@@ -29,7 +29,12 @@ class WcModal extends HTMLElement {
     }
 
     close() {
+        const activeElements = document.querySelectorAll('[data-modal-open].active')
         const delay = parseFloat(getComputedStyle(this).getPropertyValue('--codeit-modal-animation-duration')) * 2000;
+
+        [...activeElements].forEach(activeEl => {
+            activeEl.classList.remove('active', 'is-active');
+        })
 
         document.documentElement.classList.add('modal-closing')
 

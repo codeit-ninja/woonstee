@@ -31,7 +31,8 @@
     }
 
     &:hover,
-    &:active {
+    &:active,
+    &.active {
         background-color: transparent !important;
         outline: none !important;
         border: none !important;

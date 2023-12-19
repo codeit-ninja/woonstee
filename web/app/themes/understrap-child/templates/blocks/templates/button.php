@@ -47,9 +47,10 @@ if ( $button['action'] === 'offcanvas' ) {
 
 if ( $button['action'] === 'modal' ) {
     $tpl_args = array(
-        'id' => wp_unique_id('modal-'),
-        'html' => $button['modal']['content'],
-        'variant' => $button['modal']['variant'],
+        'id'        => wp_unique_id('modal-'),
+        'html'      => $button['modal']['content'],
+        'variant'   => $button['modal']['variant'],
+        'size'      => $button['modal']['size'],
     );
 
     printf(

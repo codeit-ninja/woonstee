@@ -213,7 +213,6 @@ function breadcrumbs()
     }
 }
 
-// Allow SVG
 add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mimes) {
     global $wp_version;
     
@@ -231,10 +230,14 @@ add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mime
 
 }, 10, 4);
 
-function add_mime_types($mimes)
+// Allow SVG
+function add_mime_types($mime_types)
 {
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
+    $mime_types['svg'] = 'image/svg+xml';
+    $mime_types['avif'] = 'image/avif';
+    $mime_types['avifs'] = 'image/avif-sequence';
+
+    return $mime_types;
 }
 add_filter('upload_mimes', 'add_mime_types');
 

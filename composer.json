@@ -55,12 +55,10 @@
         "roots/acorn": "^3.1",
         "codeit-ninja/advanced-custom-fields-pro": "6.2.1",
         "wpackagist-plugin/tinymce-advanced":"5.9.2",
-        "wpackagist-plugin/wordpress-seo":"21.4",
         "wpackagist-plugin/contact-form-7":"5.8",
-        "wpackagist-plugin/acf-content-analysis-for-yoast-seo":"3.1",
         "codeit-ninja/acf-extended-pro": "dev-master",
-        "wordpress-premium/wordpress-seo-premium": "21.4",
-        "pgrimaud/instagram-user-feed": "^6.16"
+        "pgrimaud/instagram-user-feed": "^6.16",
+        "wpackagist-plugin/seo-by-rank-math":"1.0.208.1"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.7.1",

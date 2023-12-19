@@ -1,4 +1,5 @@
 wc-modal {
+    --#{$prefix}modal-width: 500px;
     --#{$prefix}modal-bg: #{$white};
     --#{$prefix}modal-color: #{$body-color};
     --#{$prefix}modal-animation-duration: .22s;
@@ -36,11 +37,11 @@ wc-modal {
     display: flex;
     flex-direction: column;
     background-color: var(--#{$prefix}modal-bg);
-    max-width: 750px;
+    width: var(--#{$prefix}modal-width);
     max-height: 100vh;
     margin: 0 auto;
-    overflow-y:scroll;
-    overflow-x:hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .modal-header,

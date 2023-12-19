@@ -34,7 +34,7 @@ class WcOffcanvas extends HTMLElement {
 
         const activeElements = document.querySelectorAll('[data-offcanvas-open].active')
         const delay = getComputedStyle(this).getPropertyValue('--codeit-offcanvas-animation-delay');
-        
+
         [...activeElements].forEach(activeEl => {
             activeEl.classList.remove('active', 'is-active');
         })
