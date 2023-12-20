@@ -39,6 +39,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div><!-- #page -->
 
 <?php
+the_field('footer_scripts', 'option');
 wp_footer();
 ?>
 

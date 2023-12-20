@@ -57,6 +57,12 @@ foreach ( $understrap_includes as $file ) {
 // Register rest route for Instagram integration
 add_action( 'rest_api_init', array( WP_Instagram::class, 'register_rest_route' ) );
 
+add_theme_support('soil', [
+    'clean-up',
+    'disable-trackbacks',
+    'nice-search'
+]);
+
 /**
  * Removes the parent themes stylesheet and scripts from inc/enqueue.php
  */
@@ -91,12 +97,18 @@ function theme_enqueue_styles()
 
     $css_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_styles);
 
+    // Font awesome
+    wp_enqueue_style('font-awesome-styles', '//ka-f.fontawesome.com/releases/v6.4.0/css/pro.min.css', array(), $css_version);
+    wp_enqueue_style('font-awesome-styles', '//ka-f.fontawesome.com/releases/v6.4.0/css/pro-v5-font-face.min.css', array(), $css_version);
+
+    // Theme specific styles
     wp_enqueue_style('child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $css_version);
     wp_enqueue_style('custom-theme-styles', get_stylesheet_directory_uri() . $custom_theme_styles, array(), $css_version);
     wp_enqueue_script('jquery');
 
     $js_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_scripts);
 
+    // Theme specific scripts
     wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array(), $js_version, true);
     wp_enqueue_script('masonry-script', '//cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', array(), $js_version, true);
 

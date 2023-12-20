@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Blank Page Template
+ * Template Name: Landing page
  *
- * Template for displaying a blank page.
+ * Template for displaying a landing page
  *
  * @package Understrap
  */
@@ -17,6 +17,8 @@ defined( 'ABSPATH' ) || exit;
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+    <?php the_field('header_scripts', 'option'); ?>
 	<?php wp_head(); ?>
 </head>
 <body>
@@ -25,6 +27,12 @@ defined( 'ABSPATH' ) || exit;
 		the_post();
 		get_template_part( 'loop-templates/content', 'blank' );
 	}
+
+    get_template_part('loop-templates/blocks/block', 'editor');
+
+    do_action( 'insert_before_body_end' );
+    
+    the_field('footer_scripts', 'option');
 	wp_footer();
 	?>
 </body>

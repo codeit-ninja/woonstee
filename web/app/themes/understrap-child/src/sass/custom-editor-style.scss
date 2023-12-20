@@ -24,6 +24,10 @@
 @import "assets/understrap/theme/colors";
 @import "assets/understrap/theme/blocks";
 
+@import "./theme/fonts";
+@import "./theme/lists";
+
+@import "./editor/reset";
 
 
 // Fixes Gutenberg's cover block color picker.
