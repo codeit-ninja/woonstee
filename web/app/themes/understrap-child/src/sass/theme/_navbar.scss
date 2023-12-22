@@ -7,6 +7,7 @@
     --#{$prefix}navbar-brand-hover-color: #{$white};
     --#{$prefix}navbar-brand-padding-y: 1rem;
     --#{$prefix}navbar-brand-margin-end: 0;
+    --#{$prefix}nav-link-font-size: 1rem;
 
     &-brand {
         font-family: $headings-font-family;
@@ -40,6 +41,11 @@
             text-transform: uppercase;
             font-size: .9rem;
         }
+    }
+
+    .nav-link {
+        font-weight: 300;
+        color: $gray-500;
     }
 }
 

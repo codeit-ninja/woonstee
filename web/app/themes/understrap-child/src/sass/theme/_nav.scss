@@ -38,3 +38,26 @@
         color: shade-color($primary, 10%);
     }
 }
+
+// WordPress wp_nav_menu
+.nav-menu {
+    .nav {
+        .menu-item {
+            text-transform: uppercase;
+
+            @include line-hover('link', 100%, 0%, $white);
+
+            a {
+                color: $gray-500;
+                font-size: 1rem;
+                font-weight: 300;
+            }
+
+            &.current-menu-item {
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
