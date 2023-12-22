@@ -188,23 +188,17 @@
         },
         {
             "name": "codeit-ninja/wordpress-smtp",
-            "version": "v1.04",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeit-ninja/wordpress-smtp.git",
-                "reference": "753c4bdf1f9789fab3534df9a9ae6ff5fb96cd39"
+                "reference": "deecf15c7c109df846235f55e42f8a2547a9bbac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeit-ninja/wordpress-smtp/zipball/753c4bdf1f9789fab3534df9a9ae6ff5fb96cd39",
-                "reference": "753c4bdf1f9789fab3534df9a9ae6ff5fb96cd39",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://code-it-ninja.repo.repman.io/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/codeit-ninja/wordpress-smtp/zipball/deecf15c7c109df846235f55e42f8a2547a9bbac",
+                "reference": "deecf15c7c109df846235f55e42f8a2547a9bbac",
+                "shasum": ""
             },
             "require": {
                 "phpmailer/phpmailer": "^6.8"
@@ -215,7 +209,7 @@
                     "CodeIT\\SMTP\\": "includes/"
                 }
             },
-            "notification-url": "https://code-it-ninja.repo.repman.io/downloads",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -227,10 +221,10 @@
             ],
             "description": "Use PHPMailer with SMTP instead of WordPress defaults wp_mail. You can setup your own SMTP settings on the wp-admin dashboard",
             "support": {
-                "source": "https://github.com/codeit-ninja/wordpress-smtp/tree/v1.04",
-                "issues": "https://github.com/codeit-ninja/wordpress-smtp/issues"
+                "issues": "https://github.com/codeit-ninja/wordpress-smtp/issues",
+                "source": "https://github.com/codeit-ninja/wordpress-smtp/tree/v1.1.6"
             },
-            "time": "2023-08-07T17:07:45+00:00"
+            "time": "2023-12-22T20:57:36+00:00"
         },
         {
             "name": "composer/installers",
