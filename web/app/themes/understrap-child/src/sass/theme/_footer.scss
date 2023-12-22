@@ -55,3 +55,10 @@
 .footer-widget {
     width: 50%;
 }
+
+@include media-breakpoint-down(md) {
+    .footer-widget {
+        width: 100%;
+        text-align: center;
+    }
+}

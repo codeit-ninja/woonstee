@@ -12,13 +12,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 $showroom = get_field('showroom');
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<div class="wrapper flex-grow-1 d-flex flex-column" id="page-wrapper">
 
     <div class="<?php echo esc_attr( $container ); ?>">
         <?php breadcrumbs(); ?>
     </div>
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<div class="<?php echo esc_attr( $container ); ?> mt-auto" id="content" tabindex="-1">
 
 		<div class="row g-3 align-items-stretch">
             <div class="col-md-7 col-lg-6 order-md-0 order-1">

@@ -74,14 +74,14 @@ wc-modal {
 }
 
 .modal-open {
-    wc-modal {
+    wc-modal[open=true] {
         display: flex;
         visibility: visible;
         animation: modal-open var(--#{$prefix}modal-animation-duration) forwards;
-    }
 
-    .modal-container {
-        animation: modal-open-container var(--#{$prefix}modal-animation-duration) forwards;
+        .modal-container {
+            animation: modal-open-container var(--#{$prefix}modal-animation-duration) forwards;
+        }
     }
 }
 

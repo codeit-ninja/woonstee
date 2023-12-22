@@ -21,7 +21,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row">
 
-			<div class="col-12">
+			<div class="col-12 text-center text-md-start">
                 <span class="d-block py-3">
                 Website made with <i class="fa-solid fa-heart text-danger"></i> by <a href="https://codeit.ninja" target="_blank">codeit.ninja</a>
                 </span>

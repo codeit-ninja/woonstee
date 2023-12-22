@@ -3,7 +3,7 @@ a {
     text-decoration: none;
 }
 
-a:not(.btn, :has(.fa-brands, .fab)) {
+a:not(.btn, .btn-small, .nav-link, :has(.fa-brands, .fab)) {
     border-bottom: 1px dashed $dark;
 }
 
