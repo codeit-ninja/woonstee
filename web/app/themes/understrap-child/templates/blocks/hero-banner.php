@@ -16,7 +16,7 @@ if( $block['fullheight'] ) {
             <div class="d-flex block-hero-banner-col">
                 <div class="block-hero-banner-horizontal-text"><?php echo $block['vertical_text']; ?></div>
                 <div class="block-hero-banner-header flex-grow-1">
-                    <div class="block-hero-banner-leading"><?php echo $block['heading']; ?></div>
+                    <h1 class="block-hero-banner-leading"><?php echo $block['heading']; ?></h1>
                     <div class="block-hero-banner-text"><?php echo esc_html( $block['text'] ); ?></div>
                 </div>
             </div>
