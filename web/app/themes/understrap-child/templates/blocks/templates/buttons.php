@@ -9,6 +9,10 @@ $flex_align = 'justify-content-' . $args['align'];
 if( $args['inline'] ) {
     $flex_direction = 'flex-row';
 }
+
+if( ! isset( $buttons ) || ! $buttons ) {
+    return;
+}
 ?>
 
 <div class="block-template block-template-buttons">
