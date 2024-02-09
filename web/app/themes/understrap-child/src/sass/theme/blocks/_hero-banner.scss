@@ -76,7 +76,7 @@
 @include media-breakpoint-down(sm) {
     .block-hero-banner {
         &-grid {
-            grid-template-columns: 60% auto;
+            grid-template-columns: 30% auto;
         }
     }
 }
