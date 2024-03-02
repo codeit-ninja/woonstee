@@ -38,6 +38,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </div><!-- #page -->
 
+<div class="whatsapp">
+    <span>Stel uw vragen via WhatsApp</span>
+    <a href="https://wa.me/31625483423" target="_blank" title="Stel uw vragen via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</div>
+
 <?php
 the_field('footer_scripts', 'option');
 wp_footer();
