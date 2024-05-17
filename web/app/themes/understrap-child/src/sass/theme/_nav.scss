@@ -42,22 +42,67 @@
 // WordPress wp_nav_menu
 .nav-menu {
     .nav {
-        .menu-item {
+        > .menu-item {
+            position: relative;
             text-transform: uppercase;
-
-            @include line-hover('link', 100%, 0%, $white);
+            margin-top: .6rem;
 
             a {
                 color: $gray-500;
                 font-size: 1rem;
                 font-weight: 300;
-            }
 
-            &.current-menu-item {
-                a {
+                @include line-hover('link', 100%, 0%, $white);
+            }
+        }
+
+        .menu-item {
+            &.current-menu-item,
+            &.current-menu-ancestor {
+                > a {
                     color: $white;
                 }
             }
         }
+
+        .menu-item-has-children {
+            position: relative;
+            overflow: visible !important;
+    
+            .sub-menu {
+                visibility: hidden;
+                background-color: $dark;
+                position: absolute;
+                display: block;
+                list-style: none;
+                padding: 1.2rem 0 0;
+                min-width: 280px;
+                top: 100%;
+                box-shadow: 0 0 35px 7px rgb(0 0 0 / 0.3);
+                z-index: 5;
+                max-height: 0;
+
+                .menu-item {
+                    padding: .5rem 1rem;
+                }
+            }
+
+            &:hover {
+                .sub-menu {
+                    animation: .12s slide-in forwards;
+                }
+            }
+        }
+    }
+}
+
+@keyframes slide-in {
+    from { 
+        max-height: 0;
+        visibility: hidden;
+    }
+    to { 
+        max-height: 200px; 
+        visibility: visible;
     }
 }
