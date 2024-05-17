@@ -2,6 +2,7 @@
 
 use GuzzleHttp\Exception\GuzzleException;
 use Instagram\Api;
+use Instagram\Auth\Checkpoint\ImapClient;
 use Instagram\Exception\InstagramAuthException;
 use Instagram\Exception\InstagramException;
 use Instagram\Model\Profile;
@@ -18,7 +19,8 @@ trait InstagramTrait
     public static function api(): Api
     {
         $api = new Api( new FilesystemAdapter( 'Instagram', 0, static::$cache_dir ) );
-        $api->login( env( 'INSTAGRAM_USERNAME' ), env( 'INSTAGRAM_PASSWORD' ) );
+        $imapClient = new ImapClient( env('IMAP_SERVER'), env('IMAP_USERNAME'), env( 'IMAP_PASSWORD' ) );
+        $api->login( env( 'INSTAGRAM_USERNAME' ), env( 'INSTAGRAM_PASSWORD' ), $imapClient );
 
         return $api;
     }
@@ -111,12 +113,13 @@ class WP_Instagram
 
         try
         {
-            $medias = static::get_profile()->getMedias();
+            $profile = static::get_profile();
+            $medias = static::api()->getMoreMedias( $profile )->getMedias();
             $upload_dir = wp_get_upload_dir()['basedir'] . '/instagram';
             $json = array();
-
+            
             wp_mkdir_p( $upload_dir );
-
+            
             /**
              * Remove previous imported data
              * Don't remove, this or server will get 1000's of images in the long run

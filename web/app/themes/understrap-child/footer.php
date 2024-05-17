@@ -23,7 +23,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="col-12 text-center text-md-start">
                 <span class="d-block py-3">
-                Website made with <i class="fa-solid fa-heart text-danger"></i> by <a href="https://codeit.ninja" target="_blank">codeit.ninja</a>
+                Website by <a href="https://codeit.ninja" target="_blank">codeit.ninja</a>
                 </span>
             </div>
 
@@ -37,6 +37,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php do_action( 'insert_before_body_end' ); ?>
 
 </div><!-- #page -->
+
+<div class="whatsapp">
+    <span>Stel uw vragen via WhatsApp</span>
+    <a href="https://wa.me/31625483423" target="_blank" title="Stel uw vragen via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</div>
 
 <?php
 the_field('footer_scripts', 'option');
