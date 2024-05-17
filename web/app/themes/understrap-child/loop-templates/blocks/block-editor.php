@@ -9,9 +9,12 @@
  */
 $blocks = get_field('blocks');
 
+if( '' !== get_post()->post_content ) {
+    the_content();
+}
+
 if( ! $blocks || empty( $blocks ) ) {
     return;
 }
 
 array_walk( $blocks, 'codeit_render_block');
-?>

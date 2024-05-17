@@ -74,10 +74,11 @@
 
     span {
         display: none;
+        font-size: .8rem;
         background-color: #fff;
-        padding: .5rem 1rem;
+        padding: .3rem .75rem;
         border-radius: 5px;
-        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        box-shadow: 0 0 15px 5px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     }
 
     .fa-whatsapp {
@@ -87,6 +88,6 @@
         font-size: 2rem;
         height: 55px;
         width: 55px;
-        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        box-shadow: 0 2px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     }
 }
