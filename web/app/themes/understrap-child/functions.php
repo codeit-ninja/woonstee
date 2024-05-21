@@ -93,7 +93,7 @@ function theme_enqueue_styles()
     $theme_styles = "/css/child-theme{$suffix}.css";
     $theme_scripts = "/js/child-theme{$suffix}.js";
 
-    $custom_theme_styles = "/css/dewoonstee{$suffix}.css";
+    $custom_theme_styles = "/css/dewoonstee.min.css";
 
     $css_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_styles);
 

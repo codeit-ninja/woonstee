@@ -21,6 +21,10 @@ web/.htaccess
 .env-remote
 !.env.example
 
+# Secrets
+.secrets
+.secrets.*
+
 # Composer
 /vendor
 
