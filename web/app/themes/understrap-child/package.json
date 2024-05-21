@@ -6,7 +6,7 @@
     "scripts": {
         "dev-style": "nodemon --watch src/sass/theme --ext scss --exec \"sass --style expanded --source-map --embed-sources --no-error-css --quiet src/sass/theme/_child_theme.scss:css/dewoonstee.min.css\"",
         "dev-variables": "nodemon --watch src/sass/theme/_child_theme_variables.scss --exec \"npm run css\"",
-        "dev-purge-css": "postcss --config src/build/postcss.config.js --replace \"css/dewoonstee.css\"",
+        "dev-purge-css": "postcss --config src/build/postcss.config.js --replace \"css/dewoonstee.min.css\"",
         "dev-all": "npm-run-all --parallel dev-style dev-variables dev-purge-css",
         "bs": "browser-sync start --config src/build/browser-sync.config.js",
         "css": "npm-run-all css-compile css-postcss css-minify",

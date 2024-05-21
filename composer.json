@@ -60,6 +60,7 @@
         "pgrimaud/instagram-user-feed": "^7.0.0",
         "wpackagist-plugin/seo-by-rank-math":"1.0.219",
         "wpackagist-plugin/contact-form-cfdb7":"^1.2",
+        "wpackagist-plugin/wp-migrate-db":"2.6.10",
         "roots/soil": "^4.1",
         "codeit-ninja/wordpress-smtp": "^1.1.6"
     },

@@ -1,0 +1,25 @@
+name: Deploy staging environment
+on:
+  push:
+    branches:
+      - staging
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up SSH key
+        run: |
+          env
+          mkdir -p ~/.ssh
+          ssh-keyscan -p 22 ${{ secrets.ARTIFACT_HOST }} >> ~/.ssh/known_hosts
+          sudo apt update -y
+          sudo apt-get install sshpass
+
+      - name: Deploy to server
+        run: |
+          sshpass -p '${{ secrets.ARTIFACT_PASSWORD }}' ssh -v -o StrictHostKeyChecking=no ${{ secrets.ARTIFACT_USERNAME }}@${{ secrets.ARTIFACT_HOST }} <<'ENDSSH'
+          cd ${{ secrets.APP_PATH }}
+          git pull
