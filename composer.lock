@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f4de1724613f0ca4358ddf94015015e",
+    "content-hash": "127a504772a02dca5f106fa63485522c",
     "packages": [
         {
             "name": "brick/math",
@@ -225,6 +225,34 @@
                 "source": "https://github.com/codeit-ninja/wordpress-smtp/tree/v1.04"
             },
             "time": "2023-08-07T17:07:45+00:00"
+        },
+        {
+            "name": "codeit-ninja/wp-migrate-db-pro",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:codeit-ninja/wp-migrate-db-pro.git",
+                "reference": "ef711939cff221c67ca45685583863445e3c1d15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeit-ninja/wp-migrate-db-pro/zipball/ef711939cff221c67ca45685583863445e3c1d15",
+                "reference": "ef711939cff221c67ca45685583863445e3c1d15",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://code-it-ninja.repo.repman.io/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://code-it-ninja.repo.repman.io/downloads",
+            "support": {
+                "source": "https://github.com/codeit-ninja/wp-migrate-db-pro/tree/master",
+                "issues": "https://github.com/codeit-ninja/wp-migrate-db-pro/issues"
+            },
+            "time": "2024-05-23T16:45:57+00:00"
         },
         {
             "name": "composer/installers",
@@ -7650,6 +7678,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "codeit-ninja/acf-extended-pro": 20,
+        "codeit-ninja/wp-migrate-db-pro": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
