@@ -1,3 +1,12 @@
+:has(.rank-math-breadcrumb) {
+    .block:first-child {
+        &.block-hero-banner {
+            position: relative;
+            margin-top: -94px;
+        }
+    }
+}
+
 .block-hero-banner {
     background-color: var(--#{$prefix}banner-bg);
     justify-content: flex-end;
@@ -76,7 +85,7 @@
 @include media-breakpoint-down(sm) {
     .block-hero-banner {
         &-grid {
-            grid-template-columns: 30% auto;
+            grid-template-columns: 60% auto;
         }
     }
 }
