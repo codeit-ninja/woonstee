@@ -25,3 +25,4 @@ jobs:
           git fetch --all
           git reset --hard origin/staging
           git pull
+          composer update
