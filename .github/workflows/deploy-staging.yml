@@ -22,4 +22,6 @@ jobs:
         run: |
           sshpass -p '${{ secrets.ARTIFACT_PASSWORD }}' ssh -v -o StrictHostKeyChecking=no ${{ secrets.ARTIFACT_USERNAME }}@${{ secrets.ARTIFACT_HOST }} <<'ENDSSH'
           cd ${{ secrets.APP_PATH }}
+          git fetch --all
+          git reset --hard origin/staging
           git pull
