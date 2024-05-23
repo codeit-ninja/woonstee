@@ -1,8 +1,5 @@
 .nav {
     &-item {
-        position: relative;
-        overflow: hidden;
-
         @include line-slide-in-animation( -100%, 0% );
         @include line-hover('link', 100%, 39%, var(--#{$prefix}nav-link-active-color));
 
@@ -36,6 +33,24 @@
 
     &-brand {
         color: shade-color($primary, 10%);
+    }
+
+    &-sidebar {
+        background-color: $primary;
+        padding: 1rem;
+
+        li.active {
+            a {
+                font-weight: 500;
+            }
+        }
+
+        li a {
+            padding: .5rem .75rem;
+            display: block;
+            border-bottom: 0;
+            border-radius: 5px;
+        }
     }
 }
 
@@ -102,7 +117,7 @@
         visibility: hidden;
     }
     to { 
-        max-height: 200px; 
+        max-height: 500px; 
         visibility: visible;
     }
 }
