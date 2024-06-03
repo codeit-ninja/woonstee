@@ -12,7 +12,6 @@
             'fallback_cb' => '',
             'menu_id' => 'main-menu',
             'depth' => 2,
-            'walker' => new Understrap_WP_Bootstrap_Navwalker(),
         )
     );
     ?>
