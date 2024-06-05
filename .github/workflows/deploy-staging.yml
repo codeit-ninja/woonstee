@@ -28,3 +28,4 @@ jobs:
           composer update
           curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
           cd $(php wp-cli.phar theme path)/understrap-child && npm install && npm run dist
+          rm wp-cli.phar
