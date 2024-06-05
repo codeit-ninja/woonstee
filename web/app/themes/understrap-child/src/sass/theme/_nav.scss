@@ -111,6 +111,58 @@
     }
 }
 
+#offcanvas-navbar {
+    .menu-item {
+        a {
+            @include line-slide-in-animation( -100%, 0% );
+            @include line-hover('link', 100%, 0%, var(--#{$prefix}nav-link-active-color));
+
+            border-bottom: 0;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--#{$prefix}gray-700);
+        }
+
+        &.current-menu-parent,
+        &.current-menu-item {
+            > a {
+                color: var(--#{$prefix}nav-link-active-color);
+            }
+        }
+
+        &-has-children {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .sub-menu {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            list-style: none;
+            align-items: center;
+            margin-top: .5rem;
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .5rem;
+
+                &::before {
+                    content: "—";
+                }
+
+                a {
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+
 @keyframes slide-in {
     from { 
         max-height: 0;
