@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .glide {
   position: relative;
   width: 100%;
@@ -1553,6 +1554,75 @@ blockquote .lead {
 }
 .nav-menu .nav .menu-item-has-children:hover .sub-menu {
   animation: 0.12s slide-in forwards;
+}
+
+#offcanvas-navbar .menu-item a {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--codeit-gray-700);
+}
+@keyframes line-slide-in {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes link-line-slide-in {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+#offcanvas-navbar .menu-item a::after {
+  position: absolute;
+  content: " ";
+  background-color: var(--codeit-nav-link-active-color);
+  bottom: 0%;
+  height: 1px;
+  left: 0;
+  width: 100%;
+}
+#offcanvas-navbar .menu-item a:not(.active, .current-menu-item)::after {
+  left: -100%;
+}
+#offcanvas-navbar .menu-item a:not(.active, .current-menu-item):hover::after {
+  animation: link-line-slide-in 0.15s forwards;
+}
+#offcanvas-navbar .menu-item.current-menu-parent > a, #offcanvas-navbar .menu-item.current-menu-item > a {
+  color: var(--codeit-nav-link-active-color);
+}
+#offcanvas-navbar .menu-item-has-children {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+#offcanvas-navbar .menu-item .sub-menu {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  list-style: none;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+#offcanvas-navbar .menu-item .sub-menu li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+#offcanvas-navbar .menu-item .sub-menu li::before {
+  content: "—";
+}
+#offcanvas-navbar .menu-item .sub-menu li a {
+  font-weight: 300;
 }
 
 @keyframes slide-in {
