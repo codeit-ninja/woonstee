@@ -1134,6 +1134,11 @@ blockquote .lead {
   font-weight: 500;
 }
 
+dt {
+  color: #4d4d4d;
+  font-weight: 500;
+}
+
 .fab,
 .fa-brands {
   display: flex;
@@ -1240,6 +1245,10 @@ blockquote .lead {
 .wpcf7 .wpcf7-response-output {
   margin-top: 2rem;
 }
+.wpcf7 .wpcf7-form-control-wrap,
+.wpcf7 .wpcf7-form-control-wrap > label {
+  display: block;
+}
 
 .form {
   background-color: #e2dbd1;
@@ -1251,7 +1260,7 @@ blockquote .lead {
   --codeit-form-control-focus-color: $body-color;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #353e43;
+  border-bottom: 1px solid #1a1a1a;
   padding: 0.85rem 0;
   box-shadow: none;
   font-weight: 300;
@@ -1274,14 +1283,14 @@ blockquote .lead {
   color: var(--codeit-form-control-focus-color);
 }
 .form-control::placeholder {
-  color: #62696d;
+  color: #4d4d4d;
   text-transform: uppercase;
   opacity: 1;
   font-weight: 300;
   font-size: 0.8rem;
 }
 .form-control::-ms-input-placeholder {
-  color: #62696d;
+  color: #4d4d4d;
   text-transform: uppercase;
   opacity: 1;
   font-weight: 300;
@@ -1337,7 +1346,7 @@ blockquote .lead {
   justify-content: normal;
 }
 .navbar .quik-contact-links {
-  color: #d2d4d5;
+  color: #cccccc;
 }
 .navbar .quik-contact-links a {
   position: relative;
@@ -1347,7 +1356,7 @@ blockquote .lead {
 }
 .navbar .nav-link {
   font-weight: 300;
-  color: #8f9497;
+  color: gray;
 }
 
 #offcanvas-navbar {
@@ -1500,7 +1509,7 @@ blockquote .lead {
   margin-top: 0.6rem;
 }
 .nav-menu .nav > .menu-item a {
-  color: #8f9497;
+  color: gray;
   font-size: 1rem;
   font-weight: 300;
   position: relative;
@@ -1665,7 +1674,7 @@ blockquote .lead {
   position: relative;
 }
 .card:nth-child(even)::after {
-  background-color: #353e43;
+  background-color: #1a1a1a;
   position: absolute;
   display: block;
   content: " ";
@@ -1688,7 +1697,7 @@ blockquote .lead {
 
 .btn {
   --codeit-btn-corner-size: .2em;
-  --codeit-btn-font-weight: 400;
+  --codeit-btn-font-weight: 300;
   z-index: 1;
   position: relative;
   outline-offset: 0.2em;
@@ -1775,6 +1784,7 @@ blockquote .lead {
   border-bottom: 1px solid var(--codeit-btn-border-color);
   text-transform: uppercase;
   font-size: 1rem;
+  font-weight: 400;
   padding: 0;
   text-decoration: none;
   transition: 0.5s;
@@ -1826,10 +1836,10 @@ blockquote .lead {
   --codeit-btn-active-color: #E24536;
 }
 .btn-outline-light {
-  --codeit-btn-bg: #e2e3e4;
-  --codeit-btn-color: #e2e3e4;
-  --codeit-btn-hover-color: #e2e3e4;
-  --codeit-btn-active-color: #e2e3e4;
+  --codeit-btn-bg: #dedede;
+  --codeit-btn-color: #dedede;
+  --codeit-btn-hover-color: #dedede;
+  --codeit-btn-active-color: #dedede;
 }
 .btn-outline-white {
   --codeit-btn-bg: #fff;
@@ -2042,12 +2052,12 @@ picture {
 #wrapper-footer-full .footer-widget {
   color: #fff;
 }
+#wrapper-footer-full .footer-widget h5,
 #wrapper-footer-full .footer-widget h6 {
-  font-size: 1rem;
+  font-size: 1.3rem;
   margin-bottom: 1.5rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #62696d;
+  font-weight: 600;
+  color: #4d4d4d;
 }
 #wrapper-footer-full .fa-brands {
   background-color: transparent;
@@ -2078,7 +2088,7 @@ picture {
 
 #footer-guarantees {
   margin-top: 2rem;
-  color: #797f82;
+  color: #666666;
 }
 
 .footer-widget {
@@ -2139,19 +2149,19 @@ wc-offcanvas[variant=primary] {
   --codeit-offcanvas-bg: #e2dbd1;
 }
 wc-offcanvas[variant=primary] .nav {
-  --codeit-nav-link-color: #797f82;
+  --codeit-nav-link-color: #666666;
   --codeit-nav-link-hover-color: #000;
   --codeit-nav-link-active-color: #000;
 }
 wc-offcanvas[variant=light] {
-  --codeit-offcanvas-bg: #e2e3e4;
+  --codeit-offcanvas-bg: #dedede;
 }
 wc-offcanvas[variant=dark] {
   --codeit-offcanvas-bg: #000;
   --codeit-offcanvas-color: #fff;
 }
 wc-offcanvas[variant=dark] .nav {
-  --codeit-nav-link-color: #797f82;
+  --codeit-nav-link-color: #666666;
   --codeit-nav-link-hover-color: #fff;
   --codeit-nav-link-active-color: #fff;
 }
@@ -2166,7 +2176,7 @@ wc-offcanvas[variant=dark] .nav {
   --codeit-btn-bg: transparent;
 }
 .has-offcanvas .site::after {
-  background-color: #d2d4d5;
+  background-color: #cccccc;
   content: " ";
   display: block;
   position: absolute;
@@ -2279,8 +2289,8 @@ wc-modal[variant=primary] {
   background-color: #c0bab2;
 }
 wc-modal[variant=light] {
-  --codeit-modal-bg: #e2e3e4;
-  background-color: #c0c1c2;
+  --codeit-modal-bg: #dedede;
+  background-color: #bdbdbd;
 }
 wc-modal[variant=dark] {
   --codeit-modal-bg: #000;
@@ -2437,7 +2447,7 @@ wc-modal[variant=dark] {
   writing-mode: vertical-rl;
   font-weight: 400;
   font-size: 0.9rem;
-  color: #797f82;
+  color: #666666;
   transform: rotate(180deg);
   align-self: center;
   width: 20%;
@@ -2458,7 +2468,7 @@ wc-modal[variant=dark] {
 }
 .block-hero-banner-text {
   font-weight: 300;
-  color: #a5a9ab;
+  color: #999999;
   margin: 1.5rem 0;
 }
 .block-hero-banner-content {
@@ -2528,7 +2538,7 @@ wc-modal[variant=dark] {
   content: "\f10e";
   top: -1.2rem;
   left: -1.2rem;
-  color: #d2d4d5;
+  color: #cccccc;
   z-index: -1;
 }
 
@@ -2540,7 +2550,7 @@ wc-modal[variant=dark] {
 }
 
 .block-price-table-price {
-  font-weight: 400;
+  font-weight: 600;
   font-size: calc(1.365rem + 1.38vw);
 }
 @media (min-width: 1200px) {
@@ -2569,7 +2579,7 @@ wc-modal[variant=dark] {
 #instagram-posts a {
   font-weight: 500;
   font-size: 0.9rem;
-  color: #797f82;
+  color: #666666;
 }
 
 wc-instagram {

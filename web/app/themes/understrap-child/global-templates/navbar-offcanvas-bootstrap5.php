@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					'theme_location'  => 'primary',
 					'container_class' => 'nav-menu ms-auto',
 					'container_id'    => '',
-					'menu_class'      => 'nav flex-grow-1 ms-5 gap-3 d-none d-lg-flex',
+					'menu_class'      => 'nav flex-grow-1 ms-5 gap-3 d-none d-xl-flex',
 					'fallback_cb'     => '',
 					'menu_id'         => 'main-menu',
 					'depth'           => 2
@@ -45,7 +45,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			);
 		?>
 
-        <button class="wc-hamburger ms-auto d-flex d-lg-none" type="button" data-offcanvas-open="#offcanvas-navbar">
+        <button class="wc-hamburger ms-auto d-flex d-xl-none" type="button" data-offcanvas-open="#offcanvas-navbar">
             <span></span>
             <span></span>
             <span></span>
