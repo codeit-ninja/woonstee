@@ -51,6 +51,11 @@ blockquote {
     }
 }
 
+dt {
+    color: $gray-700;
+    font-weight: 500;
+}
+
 .fab,
 .fa-brands {
     display: flex;
