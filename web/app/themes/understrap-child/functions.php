@@ -93,7 +93,7 @@ function theme_enqueue_styles()
     $theme_styles = "/css/child-theme{$suffix}.css";
     $theme_scripts = "/js/child-theme{$suffix}.js";
 
-    $custom_theme_styles = "/css/dewoonstee{$suffix}.css";
+    $custom_theme_styles = "/css/dewoonstee.min.css";
 
     $css_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_styles);
 
@@ -452,3 +452,25 @@ function team_members() {
     return sprintf('<div class="row" id="team-members">%s</div>', ob_get_clean());
 }
 add_shortcode('team-members', 'team_members');
+
+function opening_hours_shortcode() {
+    ob_start();
+    $days = get_field( 'days', 'option' );
+    
+    echo '<dl>';
+
+    foreach( $days as $day ) {
+        printf( '<dt>%s</dt>', $day['day'] );
+
+        if( $day['closed'] ) {
+            printf( '<dd>%s</dd>', 'Gesloten' );
+        } else {
+            printf( '<dd>%s - %s</dd>', $day['from'], $day['until'] );
+        }
+    }
+
+    echo '</dl>';
+
+    return ob_get_clean();
+}
+add_shortcode('opening-hours', 'opening_hours_shortcode');

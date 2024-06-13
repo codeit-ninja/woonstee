@@ -14,6 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 3rem;
+    margin-bottom: 1.3rem;
 }
 
 h2 {
@@ -48,6 +49,11 @@ blockquote {
     .lead {
         font-weight: 500;
     }
+}
+
+dt {
+    color: $gray-700;
+    font-weight: 500;
 }
 
 .fab,

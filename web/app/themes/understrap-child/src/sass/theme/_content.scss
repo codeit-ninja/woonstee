@@ -26,3 +26,26 @@
         margin-top: 3px;
     }
 }
+
+picture {
+    margin-right: 2rem;
+    margin-bottom: .5rem;
+    box-shadow: 10px 10px 0 $primary;
+}
+
+// .row:has(.nav-sidebar) {
+//     .sidebar-left {
+//         position: relative;
+
+//         &::after {
+//             position: absolute;
+//             display: block;
+//             content: " ";
+//             height: 100%;
+//             width: 1px;
+//             right: 0;
+//             top: 0;
+//             border-left: 1px dashed $primary;
+//         }
+//     }
+// }

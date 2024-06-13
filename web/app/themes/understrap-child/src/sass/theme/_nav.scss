@@ -1,8 +1,5 @@
 .nav {
     &-item {
-        position: relative;
-        overflow: hidden;
-
         @include line-slide-in-animation( -100%, 0% );
         @include line-hover('link', 100%, 39%, var(--#{$prefix}nav-link-active-color));
 
@@ -36,6 +33,24 @@
 
     &-brand {
         color: shade-color($primary, 10%);
+    }
+
+    &-sidebar {
+        background-color: $primary;
+        padding: 1rem;
+
+        li.active {
+            a {
+                font-weight: 500;
+            }
+        }
+
+        li a {
+            padding: .5rem .75rem;
+            display: block;
+            border-bottom: 0;
+            border-radius: 5px;
+        }
     }
 }
 
@@ -96,13 +111,65 @@
     }
 }
 
+#offcanvas-navbar {
+    .menu-item {
+        a {
+            @include line-slide-in-animation( -100%, 0% );
+            @include line-hover('link', 100%, 0%, var(--#{$prefix}nav-link-active-color));
+
+            border-bottom: 0;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--#{$prefix}gray-700);
+        }
+
+        &.current-menu-parent,
+        &.current-menu-item {
+            > a {
+                color: var(--#{$prefix}nav-link-active-color);
+            }
+        }
+
+        &-has-children {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .sub-menu {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            list-style: none;
+            align-items: center;
+            margin-top: .5rem;
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .5rem;
+
+                &::before {
+                    content: "—";
+                }
+
+                a {
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+
 @keyframes slide-in {
     from { 
         max-height: 0;
         visibility: hidden;
     }
     to { 
-        max-height: 200px; 
+        max-height: 550px; 
         visibility: visible;
     }
 }
