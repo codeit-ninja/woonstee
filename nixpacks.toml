@@ -1,8 +1,11 @@
+# DONT REMOVE '...', to leave nix determined packages intact
+
 [phases.setup]
-nixPkgs = ["...", "wp-cli", "pnpm-8_x", "nodejs_18"]
+nixPkgs = ["...", "wp-cli", "pnpm-9_x", "nodejs_18"]
 
 [phases.build]
 cmds = [
+    '...',
     'cd $(wp theme path --allow-root --quiet --exec="error_reporting(0);")/$(wp option get stylesheet --allow-root --exec="error_reporting(0);") && pnpm install',
     'cd $(wp theme path --allow-root --quiet --exec="error_reporting(0);")/$(wp option get stylesheet --allow-root --exec="error_reporting(0);") && pnpm run dist',
 ]
