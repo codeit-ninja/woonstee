@@ -6,11 +6,11 @@
     .footer-widget {
         color: $white;
 
+        h5, 
         h6 {
-            font-size: 1rem;
+            font-size: 1.3rem;
             margin-bottom: 1.5rem;
-            font-weight: 500;
-            text-transform: uppercase;
+            font-weight: 600;
             color: $gray-700;
         }
     }

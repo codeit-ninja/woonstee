@@ -23,6 +23,11 @@
     .wpcf7-response-output {
         margin-top: 2rem;
     }
+
+    .wpcf7-form-control-wrap,
+    .wpcf7-form-control-wrap > label {
+        display: block;
+    }
 }
 
 .form {

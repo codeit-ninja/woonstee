@@ -452,3 +452,25 @@ function team_members() {
     return sprintf('<div class="row" id="team-members">%s</div>', ob_get_clean());
 }
 add_shortcode('team-members', 'team_members');
+
+function opening_hours_shortcode() {
+    ob_start();
+    $days = get_field( 'days', 'option' );
+    
+    echo '<dl>';
+
+    foreach( $days as $day ) {
+        printf( '<dt>%s</dt>', $day['day'] );
+
+        if( $day['closed'] ) {
+            printf( '<dd>%s</dd>', 'Gesloten' );
+        } else {
+            printf( '<dd>%s - %s</dd>', $day['from'], $day['until'] );
+        }
+    }
+
+    echo '</dl>';
+
+    return ob_get_clean();
+}
+add_shortcode('opening-hours', 'opening_hours_shortcode');

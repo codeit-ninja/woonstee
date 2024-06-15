@@ -9,7 +9,7 @@
  */
 $blocks = get_field('blocks');
 
-if( '' !== get_post()->post_content ) {
+if( '' !== get_post()->post_content && $args['content'] !== false ) {
     the_content();
 }
 
