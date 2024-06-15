@@ -8,4 +8,7 @@ cmds = [
     '...',
     'cd $(wp theme path --allow-root --quiet --exec="error_reporting(0);")/$(wp option get stylesheet --allow-root --exec="error_reporting(0);") && pnpm install',
     'cd $(wp theme path --allow-root --quiet --exec="error_reporting(0);")/$(wp option get stylesheet --allow-root --exec="error_reporting(0);") && pnpm run dist',
+    'wp package install aaemnnosttv/wp-cli-dotenv-command --allow-root',
+    'wp dotenv salts regenerate --allow-root',
+    'wp dotenv delete COMPOSER_AUTH'
 ]
