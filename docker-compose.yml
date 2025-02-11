@@ -1,5 +1,6 @@
 services:
   woonstee-wordpress:
+    restart: always
     build:
       args:
         COMPOSER_AUTH: ${COMPOSER_AUTH}
@@ -42,6 +43,7 @@ services:
 
   woonstee-mysql:
     image: mariadb
+    restart: always
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: true
       MYSQL_DATABASE: wordpress
@@ -51,6 +53,18 @@ services:
       - mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
+    networks:
+      - dokploy-network
+
+  woonstee-phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: woonstee-mysql
+    depends_on:
+      - woonstee-mysql
+    ports:
+      - "8081:80"
     networks:
       - dokploy-network
 
