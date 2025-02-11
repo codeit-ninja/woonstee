@@ -60,6 +60,8 @@ WORKDIR /var/www/html
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader
 
+ENV COMPOSER_AUTH=
+
 # Copy source files
 COPY ./.env /var/www/html/.env
 COPY ./ /var/www/html
