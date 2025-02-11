@@ -25,8 +25,8 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync \
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN echo php wp-cli.phar --info
 
-RUN chmod +x wp-cli.phar \
-    sudo mv wp-cli.phar /usr/local/bin/wp
+RUN chmod +x wp-cli.phar
+RUN mv wp-cli.phar /usr/local/bin/wp
 
 RUN wp package install aaemnnosttv/wp-cli-dotenv-command:^2.0
 
