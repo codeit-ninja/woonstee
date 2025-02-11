@@ -87,4 +87,4 @@ COPY --from=php-app /var/www/html /var/www/html
 # Copy Caddyfile for configuration
 COPY Caddyfile /etc/caddy/Caddyfile
 
-EXPOSE 80
+EXPOSE 9000 80
