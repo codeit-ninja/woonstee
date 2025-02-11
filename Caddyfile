@@ -1,0 +1,51 @@
+# Globals options:
+{
+	email richard@codeit.ninja
+	admin off
+}
+
+#===========================================#
+
+# Wordpress snippet starts here
+
+(wordpress) {
+
+	# Redirect to remove "www." since wordpress doesn't
+	# like multi-domain visits.
+	@strip_www {
+		header_regexp www Host ^www\.(.*)$
+	}
+	redir @strip_www http://{http.regexp.www.1}{uri}
+
+	# Some static files Cache-Control.
+	@static {
+		path *.ico *.css *.js *.gif *.jpg *.jpeg *.png *.svg *.woff *.json
+	}
+	header @static Cache-Control max-age=2592000
+	
+	# Cache rewrite to meet WP Super Cache "expert mode" requrements.
+	@cache {
+		not header_regexp Cookie "comment_author|wordpress_[a-f0-9]+|wp-postpass|wordpress_logged_in"
+		not path_regexp "(/wp-admin/|/xmlrpc.php|/wp-(app|cron|login|register|mail).php|wp-.*.php|/feed/|index.php|wp-comments-popup.php|wp-links-opml.php|wp-locations.php|sitemap(index)?.xml|[a-z0-9-]+-sitemap([0-9]+)?.xml)"
+		not method POST
+		not expression {query} != ''
+	}
+	route @cache {
+		try_files /wp-content/cache/supercache/{host}{uri}/index-https.html /wp-content/cache/supercache/{host}{uri}/index.html {path} {path}/index.php?{query}
+	}
+
+	# Use this header if you use something like WPML
+	# If you are running a single domain simple site you can remove this.
+	header Access-Control-Allow-Origin *
+
+	# Standard services here.
+	# Remember to modify php_fastcgi point to your fastcgi address or unix socket
+	file_server
+	encode zstd gzip
+    php_fastcgi localhost:9000
+}
+
+http://localhost {
+	root * /var/www/html/web
+    import wordpress
+}

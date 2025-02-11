@@ -1,7 +1,7 @@
 # DONT REMOVE '...', to leave nix determined packages intact
 
 [phases.setup]
-nixPkgs = ["...", "wp-cli", "pnpm-8_x", "nodejs_18"]
+nixPkgs = ["...", "wp-cli", "pnpm-9_x", "nodejs_20"]
 
 [phases.build]
 cmds = [
