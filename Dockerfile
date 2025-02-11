@@ -17,9 +17,18 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync \
   && apt-get install -y \
     git \
     nano \
+    curl \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
+
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN echo php wp-cli.phar --info
+
+RUN chmod +x wp-cli.phar \
+    sudo mv wp-cli.phar /usr/local/bin/wp
+
+RUN wp package install aaemnnosttv/wp-cli-dotenv-command:^2.0
 
 ARG COMPOSER_AUTH
 ARG DB_HOST
@@ -65,6 +74,8 @@ ENV COMPOSER_AUTH=
 # Copy source files
 COPY ./.env /var/www/html/.env
 COPY ./ /var/www/html
+
+RUN wp dotenv delete COMPOSER_AUTH
 
 # Set proper permissions
 RUN chown -R www-data:www-data /var/www/html
