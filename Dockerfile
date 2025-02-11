@@ -71,8 +71,6 @@ RUN composer install --no-dev --optimize-autoloader
 
 ENV COMPOSER_AUTH=
 
-# Copy source files
-COPY ./.env /var/www/html/.env
 COPY ./ /var/www/html
 
 RUN wp dotenv delete COMPOSER_AUTH --allow-root
@@ -86,8 +84,7 @@ RUN mv /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 FROM caddy:latest AS webserver
 COPY --from=php-app /var/www/html /var/www/html
 
-# Copy Caddyfile for configuration (if you have one)
+# Copy Caddyfile for configuration
 COPY Caddyfile /etc/caddy/Caddyfile
 
-# Expose port 80
 EXPOSE 80
