@@ -1,5 +1,5 @@
 # Use the official PHP image with necessary extensions
-FROM php:8.2-fpm
+FROM php:8.2-fpm AS php-app
 
 # Install php extensions and related packages
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
@@ -83,5 +83,11 @@ RUN chown -R www-data:www-data /var/www/html
 # log all php errors
 RUN mv /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 
-# Expose port 9000 (PHP-FPM default)
-EXPOSE 9000
+FROM caddy:latest AS webserver
+COPY --from=php-app /var/www/html /var/www/html
+
+# Copy Caddyfile for configuration (if you have one)
+COPY Caddyfile /etc/caddy/Caddyfile
+
+# Expose port 80
+EXPOSE 80
