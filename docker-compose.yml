@@ -26,7 +26,7 @@ services:
     networks:
       - dokploy-network
     ports: 
-      - "9000:9000"
+      - "9000"
 
   woonstee-caddy:
     image: caddy:2
@@ -51,6 +51,18 @@ services:
       - mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
+    networks:
+      - dokploy-network
+
+  woonstee-phpmyadmin:
+    image: arm64v8/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: woonstee-mysql
+    depends_on:
+      - woonstee-mysql
+    ports:
+      - "80"
     networks:
       - dokploy-network
 
