@@ -75,7 +75,7 @@ ENV COMPOSER_AUTH=
 COPY ./.env /var/www/html/.env
 COPY ./ /var/www/html
 
-RUN wp dotenv delete COMPOSER_AUTH
+RUN wp dotenv delete COMPOSER_AUTH --allow-root
 
 # Set proper permissions
 RUN chown -R www-data:www-data /var/www/html
