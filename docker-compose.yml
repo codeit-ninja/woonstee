@@ -24,7 +24,7 @@ services:
     depends_on:
       - woonstee-mysql
     networks:
-      - app-network
+      - dokploy-network
 
   woonstee-caddy:
     image: caddy:2
@@ -36,7 +36,7 @@ services:
     depends_on:
       - woonstee-wordpress
     networks:
-      - app-network
+      - dokploy-network
 
   woonstee-mysql:
     image: mariadb
@@ -50,11 +50,7 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - app-network
-      
-networks:
-  app-network:
-    driver: bridge
+      - dokploy-network
 
 volumes:
   mysql_data:
