@@ -28,7 +28,7 @@ RUN echo php wp-cli.phar --info
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 
-RUN wp package install aaemnnosttv/wp-cli-dotenv-command:^2.0 --force --allow-root
+RUN wp package install aaemnnosttv/wp-cli-dotenv-command:^2.0 --allow-root
 
 ARG COMPOSER_AUTH
 ARG DB_HOST
