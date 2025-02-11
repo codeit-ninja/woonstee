@@ -45,7 +45,7 @@
     php_fastcgi localhost:9000
 }
 
-http://localhost {
+:80 {
 	root * /var/www/html/web
     import wordpress
 }
