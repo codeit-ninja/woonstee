@@ -1,5 +1,5 @@
 services:
-  wordpress:
+  woonstee-wordpress:
     build:
       args:
         COMPOSER_AUTH: ${COMPOSER_AUTH}
@@ -22,21 +22,21 @@ services:
     volumes:
       - wordpress_data:/var/www/html
     networks:
-      - app-network
+      - dokploy-network
 
-  caddy:
+  woonstee-caddy:
     image: caddy:2
     ports:
-      - "8080:80"
+      - "80"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - wordpress_data:/var/www/html
     depends_on:
       - wordpress
     networks:
-      - app-network
+      - dokploy-network
 
-  mysql:
+  woonstee-mysql:
     image: mariadb
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: true
@@ -48,11 +48,7 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
+      - dokploy-network
 
 volumes:
   mysql_data:
