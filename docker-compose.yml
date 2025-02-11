@@ -54,6 +54,10 @@ services:
     networks:
       - dokploy-network
 
+networks:
+  dokploy-network:
+    external: true
+
 volumes:
   mysql_data:
   wordpress_data:
