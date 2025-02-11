@@ -9,14 +9,6 @@
 # Wordpress snippet starts here
 
 (wordpress) {
-
-	# Redirect to remove "www." since wordpress doesn't
-	# like multi-domain visits.
-	@strip_www {
-		header_regexp www Host ^www\.(.*)$
-	}
-	redir @strip_www http://{http.regexp.www.1}{uri}
-
 	# Some static files Cache-Control.
 	@static {
 		path *.ico *.css *.js *.gif *.jpg *.jpeg *.png *.svg *.woff *.json
