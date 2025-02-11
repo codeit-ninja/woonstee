@@ -26,7 +26,19 @@ services:
     networks:
       - dokploy-network
     ports: 
-      - "80"
+      - "9000:9000"
+
+  woonstee-caddy:
+    image: caddy:2
+    ports:
+      - "8080:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - wordpress_data:/var/www/html
+    depends_on:
+      - woonstee-wordpress
+    networks:
+      - dokploy-network
 
   woonstee-mysql:
     image: mariadb

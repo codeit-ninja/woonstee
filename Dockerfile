@@ -1,5 +1,5 @@
 # Use the official PHP image with necessary extensions
-FROM php:8.2-fpm AS php-app
+FROM php:8.2-fpm
 
 # Install php extensions and related packages
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
@@ -71,6 +71,8 @@ RUN composer install --no-dev --optimize-autoloader
 
 ENV COMPOSER_AUTH=
 
+# Copy source files
+COPY ./.env /var/www/html/.env
 COPY ./ /var/www/html
 
 RUN wp dotenv delete COMPOSER_AUTH --allow-root
@@ -81,10 +83,5 @@ RUN chown -R www-data:www-data /var/www/html
 # log all php errors
 RUN mv /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 
-FROM caddy:latest AS webserver
-COPY --from=php-app /var/www/html /var/www/html
-
-# Copy Caddyfile for configuration
-COPY Caddyfile /etc/caddy/Caddyfile
-
-EXPOSE 9000 80
+# Expose port 9000 (PHP-FPM default)
+EXPOSE 9000
