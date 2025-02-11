@@ -42,7 +42,7 @@
 	# Remember to modify php_fastcgi point to your fastcgi address or unix socket
 	file_server
 	encode zstd gzip
-    php_fastcgi localhost:9000
+    php_fastcgi woonstee-wordpress:9000
 }
 
 :80 {
