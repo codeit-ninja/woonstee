@@ -25,6 +25,8 @@ services:
       - woonstee-mysql
     networks:
       - dokploy-network
+    ports: 
+      - "9000"
 
   woonstee-caddy:
     image: caddy:2
