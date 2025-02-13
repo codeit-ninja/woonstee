@@ -32,7 +32,7 @@ services:
     image: caddy:2
     ports:
       - "80"
-    volumes:
+    volumes: 
       - ./Caddyfile:/etc/caddy/Caddyfile
       - wordpress_data:/var/www/html
     depends_on:
