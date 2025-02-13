@@ -44,9 +44,9 @@ services:
     image: mariadb
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: true
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
       - mysql_data:/var/lib/mysql
     ports:
@@ -68,7 +68,7 @@ services:
 
 networks:
   dokploy-network:
-    external: true
+    driver: bridge
 
 volumes:
   mysql_data:
