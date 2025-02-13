@@ -28,7 +28,7 @@ jobs:
           # Make sure to replace with your own namespace and repository
           tags: |
             registery.codeit.website/dewoonsteetiel:latest
-          platforms: linux/amd64
+          platforms: linux/arm64
           build-args: |
             COMPOSER_AUTH=${{ secrets.COMPOSER_AUTH }}
             DB_HOST=${{ secrets.DB_HOST }}
