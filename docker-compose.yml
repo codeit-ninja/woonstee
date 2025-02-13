@@ -54,7 +54,7 @@ services:
       - dokploy-network
 
   woonstee-phpmyadmin:
-    image: arm64v8/phpmyadmin
+    image: phpmyadmin/phpmyadmin
     restart: always
     environment:
       PMA_HOST: woonstee-mysql
