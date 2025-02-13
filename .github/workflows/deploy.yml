@@ -30,4 +30,4 @@ jobs:
           # Make sure to replace with your own namespace and repository
           tags: |
             registery.codeit.website/dewoonsteetiel:latest
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
